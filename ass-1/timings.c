@@ -34,12 +34,10 @@ int main(int argc, char** argv)
     
     int i;
 
-    printf("Whatup\n");
     system("uname -a");
     
     MPI_Init(&argc, &argv);
     MPI_Comm_rank(MPI_COMM_WORLD, &this_proc);
-    printf("Process # %d started \n", this_proc);
     
     MPI_Barrier(MPI_COMM_WORLD);
     reset_clock();
@@ -47,7 +45,17 @@ int main(int argc, char** argv)
     if (this_proc == 0)
         printf("Clock tick is %.3e\n", tick_size);
     
-    run_trial(0, 10, 10, 0);
+    run_trial(0, 8, 10, 0);
+    if (this_proc==0) printf("\n");
+    
+    run_trial(0, 16, 10, 0);
+    if (this_proc==0) printf("\n");
+    
+    run_trial(0, 32, 10, 0);
+    if (this_proc==0) printf("\n");
+    
+    run_trial(0, 64, 10, 0);
+    if (this_proc==0) printf("\n");
     
     MPI_Finalize();
 }
