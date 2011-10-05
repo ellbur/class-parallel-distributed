@@ -48,13 +48,13 @@ int main(int argc, char** argv)
     run_trial(0, 1<<0, 10, 0);
     if (this_proc==0) printf("\n");
     
-    run_trial(1, 1<<5, 10, 0);
+    run_trial(1, 1<<1, 10, 0);
     if (this_proc==0) printf("\n");
     
-    run_trial(2, 1<<10, 10, 0);
+    run_trial(2, 1<<2, 10, 0);
     if (this_proc==0) printf("\n");
     
-    run_trial(3, 1<<15, 10, 0);
+    run_trial(3, 1<<3, 10, 0);
     if (this_proc==0) printf("\n");
     
     MPI_Finalize();
@@ -77,10 +77,9 @@ void run_trial(
     
     if (this_proc == 0) {
         for (i=0; i<num_iters; i++) {
-            if (i<0) printf("[trial %03d] %5d\n", trial_num, ticks());
-            reset_clock();
+            printf("[trial %03d] %5d\n", trial_num, ticks());
             MPI_Send(&msg, msg_len, MPI_CHAR, 1, tag, MPI_COMM_WORLD);
-            MPI_Recv(&msg, msg_len, MPI_CHAR, 0, tag, MPI_COMM_WORLD, &status);
+            MPI_Recv(&msg, msg_len, MPI_CHAR, 1, tag, MPI_COMM_WORLD, &status);
             
             for (j=0; j<comp_size; j++)
                 run_comp();
@@ -89,7 +88,7 @@ void run_trial(
     else {
         for (i=0; i<num_iters; i++) {
             MPI_Send(&msg, msg_len, MPI_CHAR, 0, tag, MPI_COMM_WORLD);
-            MPI_Recv(&msg, msg_len, MPI_CHAR, 1, tag, MPI_COMM_WORLD, &status);
+            MPI_Recv(&msg, msg_len, MPI_CHAR, 0, tag, MPI_COMM_WORLD, &status);
         }
     }
 }
