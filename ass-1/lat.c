@@ -39,7 +39,15 @@ int main(int argc, char** argv)
     MPI_Finalize();
 }
 
+static double start;
+static double tick_size;
+
+void reset_clock(void) {
+    start = MPI_Wtime();
+    tick_size = MPI_Wtick();
+}
+
 int ticks(void) {
-    return (int) (MPI_Wtime() / MPI_Wtick());
+    return (int) ((MPI_Wtime()-start) / tick_size);
 }
 
