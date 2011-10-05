@@ -61,6 +61,7 @@ void run_trial(
 {
     static char msg[MAX_MESSAGE_LEN];
     MPI_Status status;
+    int this_proc;
     volatile int i, j;
         
     MPI_Barrier(MPI_COMM_WORLD);
