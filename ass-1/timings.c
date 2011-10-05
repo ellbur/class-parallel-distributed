@@ -48,13 +48,13 @@ int main(int argc, char** argv)
     run_trial(0, 8, 10, 0);
     if (this_proc==0) printf("\n");
     
-    run_trial(0, 16, 10, 0);
+    run_trial(1, 16, 10, 0);
     if (this_proc==0) printf("\n");
     
-    run_trial(0, 32, 10, 0);
+    run_trial(2, 32, 10, 0);
     if (this_proc==0) printf("\n");
     
-    run_trial(0, 64, 10, 0);
+    run_trial(3, 64, 10, 0);
     if (this_proc==0) printf("\n");
     
     MPI_Finalize();
