@@ -33,6 +33,7 @@ int main(int argc, char** argv)
     int msg_len = 2;
     
     int i;
+    int trial;
 
     system("uname -a");
     
@@ -47,14 +48,16 @@ int main(int argc, char** argv)
         printf("trial,msglen,compsize,ticks\n");
     }
     
+    trial = 0;
+    
     // No-computation trials
-    for (i=14; i<20; i++) {
-        run_trial(i, 1<<i, 2, 0);
+    for (i=0; i<=16; i++) {
+        run_trial(trial++, 1<<i, 10, 0);
     }
     
     // With computation trials
     for (i=0; i<20; i++) {
-        run_trial(i+20, 1, 10, i);
+        run_trial(trial++, 1, 10, i);
     }
     
     MPI_Finalize();
