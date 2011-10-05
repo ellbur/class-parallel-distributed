@@ -5,6 +5,7 @@
 #define tag 0
 
 int ticks(void);
+void reset_clock(void);
 
 int main(int argc, char** argv)
 {
