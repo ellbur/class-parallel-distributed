@@ -33,9 +33,11 @@ int main(int argc, char** argv)
     
     reset_clock();
     
-    for (i=0; i <10; i++) {
+    if (this_proc == 0) {
         printf("Clock tick is %.3e\n", tick_size);
-        
+    }
+    
+    for (i=0; i <10; i++) {
         if (this_proc == 0) {
             printf("%5d Sending...\n", ticks());
             MPI_Send(&out, msg_len, MPI_CHAR, 1, tag, MPI_COMM_WORLD);
