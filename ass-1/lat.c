@@ -25,6 +25,8 @@ int main(int argc, char** argv)
     
     MPI_Barrier(MPI_COMM_WORLD);
     
+    reset_clock();
+    
     if (this_proc == 0) {
         printf("%3d Sending...\n", ticks());
         MPI_Send(&out, msg_len, MPI_CHAR, 1, tag, MPI_COMM_WORLD);
@@ -39,8 +41,8 @@ int main(int argc, char** argv)
     MPI_Finalize();
 }
 
-static double start;
-static double tick_size;
+static double start = 0./0.;
+static double tick_size = 0./0.;
 
 void reset_clock(void) {
     start = MPI_Wtime();
