@@ -10,6 +10,7 @@ int main(int argc, char** argv)
     MPI_Status status;
 
     printf("Whatup\n");
+    system("uname -a");
     
     MPI_Init(&argc, &argv);
     MPI_Comm_rank(MPI_COMM_WORLD, &MyProc);
