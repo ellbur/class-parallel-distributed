@@ -48,8 +48,8 @@ int main(int argc, char** argv)
     }
     
     // No-computation trials
-    for (i=0; i<20; i++) {
-        run_trial(i, 1<<i, 10, 0);
+    for (i=14; i<20; i++) {
+        run_trial(i, 1<<i, 2, 0);
     }
     
     // With computation trials
