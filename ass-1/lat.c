@@ -29,11 +29,11 @@ int main(int argc, char** argv)
         printf("%3d Sending...\n", ticks());
         MPI_Send(&out, msg_len, MPI_CHAR, 1, tag, MPI_COMM_WORLD);
         printf("%3d Receiving...\n", ticks());
-        MPI_Recv(&msg_recpt, msg_len, MPI_CHAR, 1, tag, MPI_COMM_WORLD, &status);
+        MPI_Recv(&in, msg_len, MPI_CHAR, 1, tag, MPI_COMM_WORLD, &status);
     }
     else {
         MPI_Send(&out, msg_len, MPI_CHAR, 0, tag, MPI_COMM_WORLD);
-        MPI_Recv(&msg_recpt, msg_len, MPI_CHAR, 0, tag, MPI_COMM_WORLD, &status);
+        MPI_Recv(&in, msg_len, MPI_CHAR, 0, tag, MPI_COMM_WORLD, &status);
     }
     
     MPI_Finalize();
