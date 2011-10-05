@@ -54,7 +54,7 @@ int main(int argc, char** argv)
     run_trial(2, 1<<10, 10, 0);
     if (this_proc==0) printf("\n");
     
-    run_trial(3, 1<<20, 10, 0);
+    run_trial(3, 1<<15, 10, 0);
     if (this_proc==0) printf("\n");
     
     MPI_Finalize();
@@ -78,6 +78,7 @@ void run_trial(
     if (this_proc == 0) {
         for (i=0; i<num_iters; i++) {
             printf("[trial %03d] %5d\n", trial_num, ticks());
+            reset_clock();
             MPI_Send(&msg, msg_len, MPI_CHAR, 1, tag, MPI_COMM_WORLD);
             
             for (j=0; j<comp_size; j++)
