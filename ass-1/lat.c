@@ -16,6 +16,8 @@ int main(int argc, char** argv)
     char out[2] = "a";
     char in[2] = "a";
     int msg_len = 2;
+    
+    int i;
 
     printf("Whatup\n");
     system("uname -a");
@@ -28,15 +30,17 @@ int main(int argc, char** argv)
     
     reset_clock();
     
-    if (this_proc == 0) {
-        printf("%3d Sending...\n", ticks());
-        MPI_Send(&out, msg_len, MPI_CHAR, 1, tag, MPI_COMM_WORLD);
-        printf("%3d Receiving...\n", ticks());
-        MPI_Recv(&in, msg_len, MPI_CHAR, 1, tag, MPI_COMM_WORLD, &status);
-    }
-    else {
-        MPI_Send(&out, msg_len, MPI_CHAR, 0, tag, MPI_COMM_WORLD);
-        MPI_Recv(&in, msg_len, MPI_CHAR, 0, tag, MPI_COMM_WORLD, &status);
+    for (i=0; i <10; i++) {
+        if (this_proc == 0) {
+            printf("%5d Sending...\n", ticks());
+            MPI_Send(&out, msg_len, MPI_CHAR, 1, tag, MPI_COMM_WORLD);
+            printf("%5d Receiving...\n", ticks());
+            MPI_Recv(&in, msg_len, MPI_CHAR, 1, tag, MPI_COMM_WORLD, &status);
+        }
+        else {
+            MPI_Send(&out, msg_len, MPI_CHAR, 0, tag, MPI_COMM_WORLD);
+            MPI_Recv(&in, msg_len, MPI_CHAR, 0, tag, MPI_COMM_WORLD, &status);
+        }
     }
     
     MPI_Finalize();
