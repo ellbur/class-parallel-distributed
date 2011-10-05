@@ -42,20 +42,20 @@ int main(int argc, char** argv)
     MPI_Barrier(MPI_COMM_WORLD);
     reset_clock();
     
-    if (this_proc == 0)
-        printf("Clock tick is %.3e\n", tick_size);
+    if (this_proc == 0) {
+        printf("Clock tick is %.3e\n\n", tick_size);
+        printf("trial,msglen,compsize,ticks\n");
+    }
     
-    run_trial(0, 1<<0, 10, 0);
-    if (this_proc==0) printf("\n");
+    // No-computation trials
+    for (i=0; i<20; i++) {
+        run_trial(i, 1<<i, 10, 0);
+    }
     
-    run_trial(1, 1<<5, 10, 0);
-    if (this_proc==0) printf("\n");
-    
-    run_trial(2, 1<<10, 10, 0);
-    if (this_proc==0) printf("\n");
-    
-    run_trial(3, 1<<15, 10, 0);
-    if (this_proc==0) printf("\n");
+    // With computation trials
+    for (i=0; i<20; i++) {
+        run_trial(i+20, 1, 10, i);
+    }
     
     MPI_Finalize();
 }
@@ -77,8 +77,16 @@ void run_trial(
     
     if (this_proc == 0) {
         for (i=0; i<num_iters; i++) {
-            if (i>0) printf("[trial %03d] %5d\n", trial_num, ticks());
+            if (i>0) {
+                printf("%03d,%07d,%03d,%05d\n",
+                    trial_num,
+                    msg_len,
+                    comp_size,
+                    ticks()
+                );
+            }
             reset_clock();
+            
             MPI_Send(&msg, msg_len, MPI_CHAR, 1, tag, MPI_COMM_WORLD);
             MPI_Recv(&msg, msg_len, MPI_CHAR, 1, tag, MPI_COMM_WORLD, &status);
             
