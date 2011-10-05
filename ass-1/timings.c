@@ -109,7 +109,7 @@ void run_comp(void) {
     volatile double x = 7;
     volatile int i;
     
-    for (i=0; i<100000; i++) {
+    for (i=0; i<10000; i++) {
         x = sin(cos(x));
     }
 }
