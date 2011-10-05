@@ -21,14 +21,14 @@ int main(int argc, char** argv)
     
     MPI_Init(&argc, &argv);
     MPI_Comm_rank(MPI_COMM_WORLD, &this_proc);
-    printf("Process # %d started \n", this);
+    printf("Process # %d started \n", this_proc);
     
     MPI_Barrier(MPI_COMM_WORLD);
     
     if (this_proc == 0) {
-        printf("%3d Sending...\n", ticks())
+        printf("%3d Sending...\n", ticks());
         MPI_Send(&out, msg_len, MPI_CHAR, 1, tag, MPI_COMM_WORLD);
-        printf("%3d Receiving...\n", ticks())
+        printf("%3d Receiving...\n", ticks());
         MPI_Recv(&msg_recpt, msg_len, MPI_CHAR, 1, tag, MPI_COMM_WORLD, &status);
     }
     else {
