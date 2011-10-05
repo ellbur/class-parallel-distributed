@@ -7,6 +7,9 @@
 int ticks(void);
 void reset_clock(void);
 
+static double start = 0./0.;
+static double tick_size = 0./0.;
+
 int main(int argc, char** argv)
 {
     int this_proc;
@@ -31,6 +34,8 @@ int main(int argc, char** argv)
     reset_clock();
     
     for (i=0; i <10; i++) {
+        printf("Clock tick is %.3e\n", tick_size);
+        
         if (this_proc == 0) {
             printf("%5d Sending...\n", ticks());
             MPI_Send(&out, msg_len, MPI_CHAR, 1, tag, MPI_COMM_WORLD);
@@ -45,9 +50,6 @@ int main(int argc, char** argv)
     
     MPI_Finalize();
 }
-
-static double start = 0./0.;
-static double tick_size = 0./0.;
 
 void reset_clock(void) {
     start = MPI_Wtime();
