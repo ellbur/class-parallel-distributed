@@ -45,16 +45,16 @@ int main(int argc, char** argv)
     if (this_proc == 0)
         printf("Clock tick is %.3e\n", tick_size);
     
-    run_trial(0, 8, 10, 0);
+    run_trial(0, 1<<0, 10, 0);
     if (this_proc==0) printf("\n");
     
-    run_trial(1, 32, 10, 0);
+    run_trial(1, 1<<5, 10, 0);
     if (this_proc==0) printf("\n");
     
-    run_trial(2, 128, 10, 0);
+    run_trial(2, 1<<10, 10, 0);
     if (this_proc==0) printf("\n");
     
-    run_trial(3, 512, 10, 0);
+    run_trial(3, 1<<20, 10, 0);
     if (this_proc==0) printf("\n");
     
     MPI_Finalize();
