@@ -15,6 +15,7 @@ static double tick_size = 0./0.;
 #define MAX_MESSAGE_LEN 0x00100000
 
 void run_trial(
+    int trial_num,
     int msg_len,
     int num_iters,
     int comp_size
