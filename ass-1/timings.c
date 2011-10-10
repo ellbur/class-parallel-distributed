@@ -98,7 +98,7 @@ void run_trial(
         for (i=0; i<num_iters; i++) {
             if (i>0) {
                 printf("%03d,%03d,%05d\n",
-                    trial,
+                    trial_num,
                     i,
                     ticks()
                 );
