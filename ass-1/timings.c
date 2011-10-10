@@ -86,14 +86,20 @@ void run_trial(
     MPI_Comm_rank(MPI_COMM_WORLD, &this_proc);
     
     if (this_proc == 0) {
-        printf("trial,msglen,compsize,ticks\n");
+        printf("trial,msglen,compsize\n");
+        printf("%03d,%07d,%03d\n",
+            trial_num,
+            msg_len,
+            comp_size
+        );
+        printf("\n");
         
+        printf("trial,iter,ticks\n");
         for (i=0; i<num_iters; i++) {
             if (i>0) {
-                printf("%03d,%07d,%03d,%05d\n",
-                    trial_num,
-                    msg_len,
-                    comp_size,
+                printf("%03d,%03d,%05d\n",
+                    trial,
+                    i,
                     ticks()
                 );
             }
