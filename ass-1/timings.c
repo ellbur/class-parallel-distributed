@@ -51,7 +51,7 @@ int main(int argc, char** argv)
     trial = 0;
     
     // No-computation trials
-    for (x=0; x<=16; x += 0.5) {
+    for (x=0; x<=16; x += 0.1) {
         run_trial(trial++, (int)pow(2,x), 10, 0);
     }
     
