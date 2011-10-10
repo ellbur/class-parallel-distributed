@@ -31,10 +31,12 @@ int main(int argc, char** argv)
     
     MPI_Barrier(MPI_COMM_WORLD);
     
-    reset_clock();
-    
-    for (i=0; i<20; i++) {
-        printf("%d %d\n", this_proc, ticks());
+    if (this_proc == 0) {
+        printf("iter,ticks\n");
+        for (i=0; i<20; i++) {
+            printf("%d,%d\n", i, ticks());
+            reset_clock();
+        }
     }
     
     MPI_Finalize();
