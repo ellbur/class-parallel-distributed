@@ -32,8 +32,9 @@ int main(int argc, char** argv)
     char in[2] = "a";
     int msg_len = 2;
     
-    int i;
+    int i, j;
     int trial;
+    double x;
 
     system("uname -a");
     
@@ -45,19 +46,25 @@ int main(int argc, char** argv)
     
     if (this_proc == 0) {
         printf("Clock tick is %.3e\n\n", tick_size);
-        printf("trial,msglen,compsize,ticks\n");
     }
     
     trial = 0;
     
     // No-computation trials
-    for (i=0; i<=16; i++) {
-        run_trial(trial++, 1<<i, 10, 0);
+    for (x=0; x<=16; x += 0.5) {
+        run_trial(trial++, (int)pow(2,x), 10, 0);
     }
     
-    // With computation trials
+    // Mostly computation trials
     for (i=0; i<20; i++) {
         run_trial(trial++, 1, 10, i);
+    }
+    
+    // Mixed trials
+    for (i=0; i<5; i++) {
+        for (j=0; j<5; j++) {
+            run_trial(trial++, 1<<(i*2), 10, j*5);
+        }
     }
     
     MPI_Finalize();
@@ -79,6 +86,8 @@ void run_trial(
     MPI_Comm_rank(MPI_COMM_WORLD, &this_proc);
     
     if (this_proc == 0) {
+        printf("trial,msglen,compsize,ticks\n");
+        
         for (i=0; i<num_iters; i++) {
             if (i>0) {
                 printf("%03d,%07d,%03d,%05d\n",
@@ -96,6 +105,8 @@ void run_trial(
             for (j=0; j<comp_size; j++)
                 run_comp();
         }
+        
+        printf("\n");
     }
     else {
         for (i=0; i<num_iters; i++) {
