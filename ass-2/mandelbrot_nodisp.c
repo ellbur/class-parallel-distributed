@@ -1,16 +1,16 @@
 
 /*
- * Generate a reference bit vector
+ * Generate a reference hash
  *
  */
+#define _XOPEN_SOURCE // for crypt()
+#include <unistd.h>
+#include <stdio.h>
 #include <complex.h>
 #include <math.h>
 #include <stdlib.h>
+#include <string.h>
 #include <stdbool.h>
-#include <stdio.h>
-
-#define TRUE true
-#define FALSE false
 
 #define width  800
 #define height 800
@@ -29,6 +29,9 @@ double max_y;
 double col_to_x(int col) { return (double)col/width*(max_x-min_x) + min_x; }
 double row_to_y(int row) { return (double)row/height*(max_y-min_y) + min_y; }
 
+double x_to_col(double x) { return (int)round((x-min_x)/(max_x-min_x)*width); }
+double y_to_row(double y) { return (int)round((y-min_y)/(max_y-min_y)*height); }
+
 static int calc_in(
     int col,
     int row
@@ -40,11 +43,11 @@ static int calc_in(
     complex double z0 = x + y*I;
     complex double z = z0;
     
-    char in = TRUE;
+    char in = true;
     
     for (int i=0; i<iter_max; i++) {
         if (cabs(z) > 16) {
-            in = FALSE;
+            in = false;
             break;
         }
         
@@ -54,7 +57,23 @@ static int calc_in(
     return in;
 }
 
-static void collect_data(char *image_data) {
+static void print_hash(int len, const unsigned char image_data[len]) {
+    char nt_data[len];
+    memcpy(nt_data, image_data, len);
+    
+    // The image data currently has many 0s. We need to make it
+    // be a null-terminated string.
+    for (int i=0; i<len; i++) {
+        if (nt_data[i] == 0) {
+            nt_data[i] = i & 0xFF;
+        }
+    }
+    
+    const char *hash = crypt(nt_data, "ab");
+    printf("Hash: %s\n", hash);
+}
+
+static void collect_data(unsigned char *image_data) {
     min_x = center_x - delta/2;
     max_x = center_x + delta/2;
     min_y = center_y - delta/2;
@@ -71,30 +90,10 @@ static void collect_data(char *image_data) {
     }
 }
 
-static void write_reference(char *image_data, const char *filename) {
-    FILE *ref = fopen(filename, "wb");
-    if (ref == NULL) {
-        perror("Failed to open reference file");
-        exit(1);
-    }
-    
-    for (int i=0; i<width*height*3; i++) {
-        fwrite(image_data+i, sizeof(char), 1, ref);
-    }
-    
-    fflush(ref);
-    fclose(ref);
-}
-
 int main(int argc, char **argv) {
-    if (argc <= 1) {
-        fprintf(stderr, "usage: %s <ref-file>\n", argv[0]);
-        return 1;
-    }
-    
-    char image_data[width * height * 3];
+    unsigned char image_data[width * height * 3];
     
     collect_data(image_data);
-    write_reference(image_data, argv[1]);
+    print_hash(width*height*3, image_data);
 }
 
