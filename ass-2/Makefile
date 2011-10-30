@@ -12,7 +12,7 @@ mandelbrot_nodisp: mandelbrot_nodisp.c
 	gcc $< -o $@ -Wall --std=c99 -lm -lcrypt
 
 mstatic: mandelbrot_par_static.c
-	mpicc $< -o $@ -Wall --std=c99 -lcrypt
+	mpicc $< -o $@ -Wall --std=c99 -lcrypt -lm
 
 clean:
 	rm -rf gtktest mandelbrot mandelbrot_nodisp mstatic ref.bin
