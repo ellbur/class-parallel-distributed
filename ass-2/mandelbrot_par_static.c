@@ -133,6 +133,8 @@ static void collect_data(char *image_data) {
 }
 
 static void child_routine(int proc) {
+    system("uname -a");
+    
     min_x = center_x - delta/2;
     max_x = center_x + delta/2;
     min_y = center_y - delta/2;
