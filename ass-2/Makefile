@@ -14,8 +14,11 @@ mandelbrot_nodisp: mandelbrot_nodisp.c
 mstatic: mandelbrot_par_static.c
 	mpicc $< -o $@ -Wall --std=c99 -lcrypt -lm
 
+mdyn: mandelbrot_par_dynamic.c
+	mpicc $< -o $@ -Wall --std=c99 -lcrypt -lm
+
 clean:
-	rm -rf gtktest mandelbrot mandelbrot_nodisp mstatic ref.bin
+	rm -rf gtktest mandelbrot mandelbrot_nodisp mstatic mdyn ref.bin
 
 # vim: noexpandtab
 
