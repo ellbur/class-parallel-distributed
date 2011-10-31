@@ -11,11 +11,11 @@ mandelbrot: mandelbrot.c
 mandelbrot_nodisp: mandelbrot_nodisp.c
 	gcc $< -o $@ -Wall --std=c99 -lm -lcrypt
 
-mstatic: mandelbrot_par_static.c
-	mpicc $< -o $@ -Wall --std=c99 -lcrypt -lm
+mstatic: mandelbrot_par_static.c fractal.c measure.c
+	mpicc $< fractal.c measure.c -o $@ -Wall --std=c99 -lcrypt -lm
 
-mdyn: mandelbrot_par_dynamic.c
-	mpicc $< -o $@ -Wall --std=c99 -lcrypt -lm
+mdyn: mandelbrot_par_dynamic.c fractal.c measure.c
+	mpicc $< fractal.c measure.c -o $@ -Wall --std=c99 -lcrypt -lm
 
 clean:
 	rm -rf gtktest mandelbrot mandelbrot_nodisp mstatic mdyn ref.bin

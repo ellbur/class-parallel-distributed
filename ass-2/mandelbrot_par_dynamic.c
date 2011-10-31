@@ -10,77 +10,10 @@
 #include <string.h>
 #include <unistd.h>
 
-#define width  800
-#define height 800
+#include "fractal.h"
+#include "measure.h"
 
-// ----------------------------------------------------------------
-// Drawing code
-
-const int iter_max = 100;
-
-const double center_x = -0.78;
-const double center_y = 0.0;
-const double delta = 2.5;
-
-double min_x;
-double max_x;
-double min_y;
-double max_y;
-
-double col_to_x(int col) { return (double)col/width*(max_x-min_x) + min_x; }
-double row_to_y(int row) { return (double)row/height*(max_y-min_y) + min_y; }
-
-double x_to_col(double x) { return (int)round((x-min_x)/(max_x-min_x)*width); }
-double y_to_row(double y) { return (int)round((y-min_y)/(max_y-min_y)*height); }
-
-static int calc_in(
-    int col,
-    int row
-)
-{
-    double x = col_to_x(col);
-    double y = row_to_y(row);
-    
-    complex double z0 = x + y*I;
-    complex double z = z0;
-    
-    char in = true;
-    
-    for (int i=0; i<iter_max; i++) {
-        if (cabs(z) > 16) {
-            in = false;
-            break;
-        }
-        
-        z = z*z + z0;
-    }
-    
-    return in;
-}
-
-// --------------------------------------------------------------------
-// Write File
-
-static void print_hash(int len, const char image_data[len]) {
-    char nt_data[len];
-    memcpy(nt_data, image_data, len);
-    
-    // The image data currently has many 0s. We need to make it
-    // be a null-terminated string.
-    for (int i=0; i<len; i++) {
-        if (nt_data[i] == 0) {
-            nt_data[i] = i & 0xFF;
-        }
-    }
-    
-    const char *hash = crypt(nt_data, "ab");
-    printf("Hash: %s\n", hash);
-}
-
-// ----------------------------------------------------------------
-// Parallelization Code
-
-#define num_children 7
+int num_children;
 #define buf_len ((width+7)/8)
 
 static void collect_data(char *image_data);
@@ -171,17 +104,16 @@ static void collect_into_image(char *image_data, int row, char *buf) {
 }
 
 static void child_routine(int proc) {
-    min_x = center_x - delta/2;
-    max_x = center_x + delta/2;
-    min_y = center_y - delta/2;
-    max_y = center_y + delta/2;
+    begin_useful_work();
     
     while (true) {
         int row;
         MPI_Status status;
         
+        end_useful_work();
         MPI_Recv(&row, 1, MPI_INT, 0, 0, MPI_COMM_WORLD, &status);
         if (row == -1) break;
+        begin_useful_work();
         
         char buf[buf_len];
         for (int j=0; j<buf_len; j++) buf[j] = 0;
@@ -189,25 +121,28 @@ static void child_routine(int proc) {
             buf[j/8] |= calc_in(j, row) << (j % 8);
         }
         
+        end_useful_work();
         MPI_Send(buf, buf_len, MPI_CHAR, 0, 0, MPI_COMM_WORLD);
+        begin_useful_work();
     }
     
+    report_work();
     MPI_Finalize();
 }
 
-// --------------------------------------------------------------------
-// Main
-
 int main(int argc, char **argv) {
     int proc;
+    int comm_size;
     
     MPI_Init(&argc, &argv);
     MPI_Comm_rank(MPI_COMM_WORLD, &proc);
+    
+    MPI_Comm_size(MPI_COMM_WORLD, &comm_size);
+    num_children = comm_size-1;
     
     if (proc == 0) {
         master_routine();
     }
     else child_routine(proc);
 }
-
 
