@@ -4,10 +4,14 @@ GTK_LDFLAGS = $(shell pkg-config --libs gtk+-2.0)
 
 MPICC = mpicc
 
+all-remote: mandelbrot-nodisp mpi-static mpi-dyn mpi-static-shuffle \
+	mpi-dyn-shuffle omp-static omp-dyn omp-static-shuffle omp-dyn-shuffle \
+	mpi-omp-static mpi-omp-dyn
+
 mandelbrot: mandelbrot.c
 	gcc $< -o $@ -Wall --std=c99 $(GTK_CFLAGS) $(GTK_LDFLAGS) -lcrypt -O3
 
-mandelbrot_nodisp: mandelbrot_nodisp.c
+mandelbrot-nodisp: mandelbrot_nodisp.c
 	gcc $< -o $@ -Wall --std=c99 -lm -lcrypt -O3
 
 mpi-static: mpi_static.c fractal.c measure.c
@@ -44,8 +48,9 @@ mpi-omp-dyn: mpi_omp_dyn.c fractal.c measure.c
 	mpicc $< fractal.c measure.c -o $@ -Wall --std=c99 -lcrypt -lm -mpe=mpilog -fopenmp -O3
 	
 clean:
-	rm -rf mandelbrot mandelbrot_nodisp mstatic mdyn momp-static \
-	momp-dyn momp-fake momp-shuf-static momp-shuf-dyn momp-shuf-fake ref.bin
+	rm -rf mandelbrot mandelbrot-nodisp mpi-static mpi-dyn mpi-static-shuffle \
+	mpi-dyn-shuffle omp-static omp-dyn omp-static-shuffle omp-dyn-shuffle \
+	mpi-omp-static mpi-omp-dyn
 
 no-data:
 	rm -rf *.clog2 *.slog2

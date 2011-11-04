@@ -8,6 +8,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <sys/time.h>
+#include <omp.h>
 
 #include "fractal.h"
 
@@ -16,7 +18,10 @@ static inline int row_at(int i) {
 }
 
 int main(int argc, char **argv) {
+    struct timeval start, end;
     bool in[height][width];
+    
+    gettimeofday(&start, NULL);
     
     #if really_parallel
         #if use_dynamic
@@ -45,5 +50,14 @@ int main(int argc, char **argv) {
     }
     
     print_hash(width*height*3, image_data);
+    
+    gettimeofday(&end, NULL);
+    double duration = (end.tv_sec-start.tv_sec)*1.0 + (end.tv_usec-start.tv_usec)/1e6;
+    
+    printf("[omp.compu] prog=%s,n=%d,time=%.5f\n",
+        argv[0],
+        omp_get_max_threads(),
+        duration
+    );
 }
 

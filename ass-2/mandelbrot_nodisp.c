@@ -11,6 +11,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
+#include <sys/time.h>
 
 #define width  800
 #define height 800
@@ -92,8 +93,18 @@ static void collect_data(unsigned char *image_data) {
 
 int main(int argc, char **argv) {
     unsigned char image_data[width * height * 3];
+    struct timeval start, end;
+    gettimeofday(&start, NULL);
     
     collect_data(image_data);
     print_hash(width*height*3, image_data);
+    
+    gettimeofday(&end, NULL);
+    double duration = (end.tv_sec-start.tv_sec)*1.0 + (end.tv_usec-start.tv_usec)/1e6;
+    
+    printf("[sequential] prog=%s,time=%.5f\n",
+        argv[0],
+        duration
+    );
 }
 
