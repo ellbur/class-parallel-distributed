@@ -16,6 +16,10 @@
 int num_children;
 #define buf_len ((width+7)/8)
 
+static inline int row_at(int i) {
+    return (i*373) % height;
+}
+
 static void collect_data(char *image_data);
 static void start_row(
     MPI_Request *pending_requests,
@@ -30,8 +34,12 @@ static void send_shutdown(int child);
 static void master_routine() {
     char image_data[width * height * 3];
     
+    begin_computation();
+    
     collect_data(image_data);
     print_hash(width*height*3, image_data);
+    
+    report_computation();
     MPI_Finalize();
 }
 
@@ -94,7 +102,7 @@ static void send_shutdown(int child) {
 static void collect_into_image(char *image_data, int row, char *buf) {
     for (int i=0; i<buf_len; i++)
     for (int j=0; j<8; j++) {
-        int pix = row*width + i*8 + j;
+        int pix = row_at(row)*width + i*8 + j;
         char in = (buf[i] >> j) & 1;
         
         image_data[3*pix+0] = in-1;
@@ -118,7 +126,7 @@ static void child_routine(int proc) {
         char buf[buf_len];
         for (int j=0; j<buf_len; j++) buf[j] = 0;
         for (int j=0; j<width; j++) {
-            buf[j/8] |= calc_in(j, row) << (j % 8);
+            buf[j/8] |= calc_in(j, row_at(row)) << (j % 8);
         }
         
         end_useful_work();
@@ -145,4 +153,5 @@ int main(int argc, char **argv) {
     }
     else child_routine(proc);
 }
+
 

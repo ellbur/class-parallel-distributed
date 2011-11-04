@@ -15,6 +15,10 @@
 
 int num_children;
 
+static inline int row_at(int i) {
+    return (i*373) % height;
+}
+
 static void calc_offsets(
     int proc,
     int *row_start,
@@ -36,8 +40,12 @@ static void collect_data(char *image_data);
 static void master_routine() {
     char image_data[width * height * 3];
     
+    begin_computation();
+    
     collect_data(image_data);
     print_hash(width*height*3, image_data);
+    
+    report_computation();
     MPI_Finalize();
 }
 
@@ -54,7 +62,7 @@ static void collect_data(char *image_data) {
         
         for (int i=row_start; i<row_stop; i++)
         for (int j=0; j<width; j++) {
-            int pix = i*width+j;
+            int pix = row_at(i)*width+j;
             int pix_off = (i-row_start)*width+j;
             char in = (buf[pix_off/8] >> (pix_off%8)) & 1;
             
@@ -71,13 +79,23 @@ static void child_routine(int proc) {
     int row_start, row_stop, buf_len;
     calc_offsets(proc, &row_start, &row_stop, &buf_len);
     
+    printf("Doing %d to %d\n", row_start, row_stop);
+    
+    // Do the calculations in parallel
+    char in[row_stop-row_start][width];
+    #pragma omp parallel for
+    for (int i=row_start; i<row_stop; i++)
+    for (int j=0; j<width; j++) {
+        in[i-row_start][j] = calc_in(j, row_at(i));
+    }
+    
+    // Now bit-pack for sending over the wire
     char buf[buf_len];
     for (int i=0; i<buf_len; i++) buf[i] = 0;
-    
     for (int i=row_start; i<row_stop; i++)
     for (int j=0; j<width; j++) {
         int pix_off = (i-row_start)*width+j;
-        buf[pix_off/8] |= calc_in(j, i) << (pix_off % 8);
+        buf[pix_off/8] |= in[i-row_start][j] << (pix_off % 8);
     }
     
     end_useful_work();

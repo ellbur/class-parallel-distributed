@@ -19,6 +19,16 @@ void report_work(void) {
     int proc;
     MPI_Comm_rank(MPI_COMM_WORLD, &proc);
     
-    printf("Proc %d did %.3f useful work\n", proc, useful_work);
+    printf("Proc %d did %.5f useful work\n", proc, useful_work);
+}
+
+double compu_start = 0.0;
+
+void begin_computation(void) {
+    compu_start = MPI_Wtime();
+}
+
+void report_computation(void) {
+    printf("Computation took %.5f\n", MPI_Wtime() - compu_start);
 }
 
