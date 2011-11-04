@@ -35,7 +35,7 @@ for $prog (@ompprogs) {
     }
 }
 
-run("./mandelbrot-nodisp >> all-data.txt");
+run("./mandelbrot-nodisp >> $target");
 
 process()
 

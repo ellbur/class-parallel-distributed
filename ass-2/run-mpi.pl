@@ -27,7 +27,7 @@ sub process {
 }
 
 @mpiprogs = ('./mpi-static', './mpi-dyn', './mpi-static-shuffle',
-    './mpi-dyn-shuffle', './mpi-omp-static', './mpi-omp-dyn');
+    './mpi-dyn-shuffle');
 
 for $prog (@mpiprogs) {
     for $i (2 ... 14) {

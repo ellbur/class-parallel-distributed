@@ -5,7 +5,7 @@ GTK_LDFLAGS = $(shell pkg-config --libs gtk+-2.0)
 MPICC = mpicc
 
 all-mpi: mandelbrot-nodisp mpi-static mpi-dyn mpi-static-shuffle \
-	mpi-dyn-shuffle mpi-omp-static mpi-omp-dyn
+	mpi-dyn-shuffle
 
 all-omp: mandelbrot-nodisp omp-static omp-dyn omp-static-shuffle omp-dyn-shuffle
 
