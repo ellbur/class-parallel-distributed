@@ -4,9 +4,10 @@ GTK_LDFLAGS = $(shell pkg-config --libs gtk+-2.0)
 
 MPICC = mpicc
 
-all-remote: mandelbrot-nodisp mpi-static mpi-dyn mpi-static-shuffle \
-	mpi-dyn-shuffle omp-static omp-dyn omp-static-shuffle omp-dyn-shuffle \
-	mpi-omp-static mpi-omp-dyn
+all-mpi: mandelbrot-nodisp mpi-static mpi-dyn mpi-static-shuffle \
+	mpi-dyn-shuffle mpi-omp-static mpi-omp-dyn
+
+all-omp: mandelbrot-nodisp omp-static omp-dyn omp-static-shuffle omp-dyn-shuffle
 
 mandelbrot: mandelbrot.c
 	gcc $< -o $@ -Wall --std=c99 $(GTK_CFLAGS) $(GTK_LDFLAGS) -lcrypt -O3
