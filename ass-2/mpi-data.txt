@@ -1,0 +1,887 @@
+
+[useful] prog=./mpi-static,n=2,proc=1,work=5.08090
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-static,n=2,time=5.23587
+[useful] prog=./mpi-static,n=3,proc=1,work=2.53787
+[useful] prog=./mpi-static,n=3,proc=2,work=2.79553
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-static,n=3,time=2.91316
+[useful] prog=./mpi-static,n=4,proc=3,work=0.53845
+[useful] prog=./mpi-static,n=4,proc=1,work=0.98429
+[useful] prog=./mpi-static,n=4,proc=2,work=3.98424
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-static,n=4,time=4.12604
+[useful] prog=./mpi-static,n=5,proc=1,work=0.20754
+[useful] prog=./mpi-static,n=5,proc=4,work=0.23534
+[useful] prog=./mpi-static,n=5,proc=2,work=1.28345
+[useful] prog=./mpi-static,n=5,proc=3,work=1.28304
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-static,n=5,time=1.43553
+[useful] prog=./mpi-static,n=6,proc=1,work=0.13298
+[useful] prog=./mpi-static,n=6,proc=5,work=0.25180
+[useful] prog=./mpi-static,n=6,proc=2,work=0.70563
+[useful] prog=./mpi-static,n=6,proc=3,work=1.29913
+[useful] prog=./mpi-static,n=6,proc=4,work=1.35325
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-static,n=6,time=1.47059
+[useful] prog=./mpi-static,n=7,proc=6,work=0.15006
+[useful] prog=./mpi-static,n=7,proc=1,work=0.15892
+[useful] prog=./mpi-static,n=7,proc=5,work=0.39518
+[useful] prog=./mpi-static,n=7,proc=2,work=0.45079
+[useful] prog=./mpi-static,n=7,proc=3,work=0.97828
+[useful] prog=./mpi-static,n=7,proc=4,work=1.82978
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-static,n=7,time=1.95630
+[useful] prog=./mpi-static,n=8,proc=1,work=0.07055
+[useful] prog=./mpi-static,n=8,proc=7,work=0.13553
+[useful] prog=./mpi-static,n=8,proc=2,work=0.27742
+[useful] prog=./mpi-static,n=8,proc=6,work=0.43072
+[useful] prog=./mpi-static,n=8,proc=5,work=0.60517
+[useful] prog=./mpi-static,n=8,proc=4,work=0.95755
+[useful] prog=./mpi-static,n=8,proc=3,work=1.28593
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-static,n=8,time=1.36387
+[useful] prog=./mpi-static,n=9,proc=8,work=0.06226
+[useful] prog=./mpi-static,n=9,proc=1,work=0.11093
+[useful] prog=./mpi-static,n=9,proc=2,work=0.16163
+[useful] prog=./mpi-static,n=9,proc=7,work=0.29358
+[useful] prog=./mpi-static,n=9,proc=3,work=0.50562
+[useful] prog=./mpi-static,n=9,proc=4,work=0.78650
+[useful] prog=./mpi-static,n=9,proc=6,work=0.85829
+[useful] prog=./mpi-static,n=9,proc=5,work=1.45929
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-static,n=9,time=1.52233
+[useful] prog=./mpi-static,n=10,proc=1,work=0.05348
+[useful] prog=./mpi-static,n=10,proc=9,work=0.05360
+[useful] prog=./mpi-static,n=10,proc=8,work=0.10912
+[useful] prog=./mpi-static,n=10,proc=2,work=0.12161
+[useful] prog=./mpi-static,n=10,proc=7,work=0.36363
+[useful] prog=./mpi-static,n=10,proc=5,work=0.68315
+[useful] prog=./mpi-static,n=10,proc=3,work=0.74109
+[useful] prog=./mpi-static,n=10,proc=6,work=1.00669
+[useful] prog=./mpi-static,n=10,proc=4,work=1.24769
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-static,n=10,time=1.31229
+[useful] prog=./mpi-static,n=11,proc=1,work=0.04789
+[useful] prog=./mpi-static,n=11,proc=9,work=0.08458
+[useful] prog=./mpi-static,n=11,proc=10,work=0.08446
+[useful] prog=./mpi-static,n=11,proc=2,work=0.16934
+[useful] prog=./mpi-static,n=11,proc=8,work=0.23629
+[useful] prog=./mpi-static,n=11,proc=3,work=0.25663
+[useful] prog=./mpi-static,n=11,proc=4,work=0.45636
+[useful] prog=./mpi-static,n=11,proc=7,work=0.45771
+[useful] prog=./mpi-static,n=11,proc=6,work=0.58743
+[useful] prog=./mpi-static,n=11,proc=5,work=1.09071
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-static,n=11,time=1.15759
+[useful] prog=./mpi-static,n=12,proc=1,work=0.07200
+[useful] prog=./mpi-static,n=12,proc=2,work=0.07462
+[useful] prog=./mpi-static,n=12,proc=10,work=0.06518
+[useful] prog=./mpi-static,n=12,proc=11,work=0.07307
+[useful] prog=./mpi-static,n=12,proc=9,work=0.16357
+[useful] prog=./mpi-static,n=12,proc=3,work=0.18480
+[useful] prog=./mpi-static,n=12,proc=8,work=0.34716
+[useful] prog=./mpi-static,n=12,proc=4,work=0.38935
+[useful] prog=./mpi-static,n=12,proc=5,work=0.48096
+[useful] prog=./mpi-static,n=12,proc=7,work=0.52496
+[useful] prog=./mpi-static,n=12,proc=6,work=1.07733
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-static,n=12,time=1.15405
+[useful] prog=./mpi-static,n=13,proc=1,work=0.03999
+[useful] prog=./mpi-static,n=13,proc=12,work=0.03673
+[useful] prog=./mpi-static,n=13,proc=11,work=0.05070
+[useful] prog=./mpi-static,n=13,proc=2,work=0.05887
+[useful] prog=./mpi-static,n=13,proc=10,work=0.20352
+[useful] prog=./mpi-static,n=13,proc=3,work=0.25874
+[useful] prog=./mpi-static,n=13,proc=4,work=0.31538
+[useful] prog=./mpi-static,n=13,proc=9,work=0.52135
+[useful] prog=./mpi-static,n=13,proc=7,work=0.53940
+[useful] prog=./mpi-static,n=13,proc=8,work=0.70376
+[useful] prog=./mpi-static,n=13,proc=5,work=0.78863
+[useful] prog=./mpi-static,n=13,proc=6,work=1.04554
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-static,n=13,time=1.11423
+[useful] prog=./mpi-static,n=14,proc=1,work=0.06061
+[useful] prog=./mpi-static,n=14,proc=13,work=0.05383
+[useful] prog=./mpi-static,n=14,proc=12,work=0.08252
+[useful] prog=./mpi-static,n=14,proc=2,work=0.09380
+[useful] prog=./mpi-static,n=14,proc=11,work=0.09194
+[useful] prog=./mpi-static,n=14,proc=3,work=0.10319
+[useful] prog=./mpi-static,n=14,proc=9,work=0.30787
+[useful] prog=./mpi-static,n=14,proc=5,work=0.32442
+[useful] prog=./mpi-static,n=14,proc=10,work=0.39395
+[useful] prog=./mpi-static,n=14,proc=6,work=0.43149
+[useful] prog=./mpi-static,n=14,proc=4,work=0.51931
+[useful] prog=./mpi-static,n=14,proc=8,work=0.87334
+[useful] prog=./mpi-static,n=14,proc=7,work=1.08653
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-static,n=14,time=1.15211
+[useful] prog=./mpi-dyn,n=2,proc=1,work=5.01432
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-dyn,n=2,time=5.82967
+[useful] prog=./mpi-dyn,n=3,proc=2,work=1.77875
+[useful] prog=./mpi-dyn,n=3,proc=1,work=2.02328
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-dyn,n=3,time=2.57664
+[useful] prog=./mpi-dyn,n=4,proc=2,work=1.46702
+[useful] prog=./mpi-dyn,n=4,proc=1,work=1.48726
+[useful] prog=./mpi-dyn,n=4,proc=3,work=1.29568
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-dyn,n=4,time=2.03033
+[useful] prog=./mpi-dyn,n=5,proc=2,work=0.96339
+[useful] prog=./mpi-dyn,n=5,proc=1,work=1.10852
+[useful] prog=./mpi-dyn,n=5,proc=3,work=0.93927
+[useful] prog=./mpi-dyn,n=5,proc=4,work=1.03886
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-dyn,n=5,time=1.45534
+[useful] prog=./mpi-dyn,n=6,proc=1,work=0.84671
+[useful] prog=./mpi-dyn,n=6,proc=2,work=0.83483
+[useful] prog=./mpi-dyn,n=6,proc=5,work=0.68301
+[useful] prog=./mpi-dyn,n=6,proc=3,work=0.70773
+[useful] prog=./mpi-dyn,n=6,proc=4,work=0.69923
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-dyn,n=6,time=1.44900
+[useful] prog=./mpi-dyn,n=7,proc=1,work=0.62801
+[useful] prog=./mpi-dyn,n=7,proc=2,work=0.68430
+[useful] prog=./mpi-dyn,n=7,proc=3,work=0.66693
+[useful] prog=./mpi-dyn,n=7,proc=5,work=0.59456
+[useful] prog=./mpi-dyn,n=7,proc=6,work=0.58485
+[useful] prog=./mpi-dyn,n=7,proc=4,work=0.67883
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-dyn,n=7,time=1.04864
+[useful] prog=./mpi-dyn,n=8,proc=1,work=0.62644
+[useful] prog=./mpi-dyn,n=8,proc=2,work=0.57082
+[useful] prog=./mpi-dyn,n=8,proc=6,work=0.53606
+[useful] prog=./mpi-dyn,n=8,proc=5,work=0.61117
+[useful] prog=./mpi-dyn,n=8,proc=3,work=0.55075
+[useful] prog=./mpi-dyn,n=8,proc=4,work=0.61793
+[useful] prog=./mpi-dyn,n=8,proc=7,work=0.60523
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-dyn,n=8,time=0.79506
+[useful] prog=./mpi-dyn,n=9,proc=2,work=0.46646
+[useful] prog=./mpi-dyn,n=9,proc=1,work=0.46327
+[useful] prog=./mpi-dyn,n=9,proc=3,work=0.50859
+[useful] prog=./mpi-dyn,n=9,proc=4,work=0.50652
+[useful] prog=./mpi-dyn,n=9,proc=6,work=0.49855
+[useful] prog=./mpi-dyn,n=9,proc=5,work=0.44817
+[useful] prog=./mpi-dyn,n=9,proc=8,work=0.48561
+[useful] prog=./mpi-dyn,n=9,proc=7,work=0.45198
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-dyn,n=9,time=0.67379
+[useful] prog=./mpi-dyn,n=10,proc=2,work=0.37931
+[useful] prog=./mpi-dyn,n=10,proc=1,work=0.38527
+[useful] prog=./mpi-dyn,n=10,proc=3,work=0.42357
+[useful] prog=./mpi-dyn,n=10,proc=6,work=0.41544
+[useful] prog=./mpi-dyn,n=10,proc=5,work=0.37550
+[useful] prog=./mpi-dyn,n=10,proc=4,work=0.37568
+[useful] prog=./mpi-dyn,n=10,proc=7,work=0.36863
+[useful] prog=./mpi-dyn,n=10,proc=8,work=0.36863
+[useful] prog=./mpi-dyn,n=10,proc=9,work=0.41343
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-dyn,n=10,time=0.58688
+[useful] prog=./mpi-dyn,n=11,proc=2,work=0.45499
+[useful] prog=./mpi-dyn,n=11,proc=1,work=0.46372
+[useful] prog=./mpi-dyn,n=11,proc=4,work=0.46112
+[useful] prog=./mpi-dyn,n=11,proc=6,work=0.45497
+[useful] prog=./mpi-dyn,n=11,proc=5,work=0.41310
+[useful] prog=./mpi-dyn,n=11,proc=3,work=0.46030
+[useful] prog=./mpi-dyn,n=11,proc=10,work=0.44707
+[useful] prog=./mpi-dyn,n=11,proc=9,work=0.44462
+[useful] prog=./mpi-dyn,n=11,proc=7,work=0.41380
+[useful] prog=./mpi-dyn,n=11,proc=8,work=0.40568
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-dyn,n=11,time=0.63009
+[useful] prog=./mpi-dyn,n=12,proc=2,work=0.31401
+[useful] prog=./mpi-dyn,n=12,proc=1,work=0.31565
+[useful] prog=./mpi-dyn,n=12,proc=3,work=0.30830
+[useful] prog=./mpi-dyn,n=12,proc=4,work=0.33798
+[useful] prog=./mpi-dyn,n=12,proc=6,work=0.33312
+[useful] prog=./mpi-dyn,n=12,proc=5,work=0.30062
+[useful] prog=./mpi-dyn,n=12,proc=11,work=0.33030
+[useful] prog=./mpi-dyn,n=12,proc=7,work=0.34231
+[useful] prog=./mpi-dyn,n=12,proc=8,work=0.29528
+[useful] prog=./mpi-dyn,n=12,proc=10,work=0.28819
+[useful] prog=./mpi-dyn,n=12,proc=9,work=0.29605
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-dyn,n=12,time=0.51943
+[useful] prog=./mpi-dyn,n=13,proc=2,work=0.28824
+[useful] prog=./mpi-dyn,n=13,proc=1,work=0.28037
+[useful] prog=./mpi-dyn,n=13,proc=3,work=0.28152
+[useful] prog=./mpi-dyn,n=13,proc=6,work=0.27033
+[useful] prog=./mpi-dyn,n=13,proc=5,work=0.27708
+[useful] prog=./mpi-dyn,n=13,proc=11,work=0.26858
+[useful] prog=./mpi-dyn,n=13,proc=12,work=0.25923
+[useful] prog=./mpi-dyn,n=13,proc=4,work=0.30865
+[useful] prog=./mpi-dyn,n=13,proc=7,work=0.31199
+[useful] prog=./mpi-dyn,n=13,proc=8,work=0.30435
+[useful] prog=./mpi-dyn,n=13,proc=9,work=0.26604
+[useful] prog=./mpi-dyn,n=13,proc=10,work=0.30316
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-dyn,n=13,time=0.49058
+[useful] prog=./mpi-dyn,n=14,proc=2,work=0.38789
+[useful] prog=./mpi-dyn,n=14,proc=6,work=0.36864
+[useful] prog=./mpi-dyn,n=14,proc=5,work=0.38798
+[useful] prog=./mpi-dyn,n=14,proc=11,work=0.36439
+[useful] prog=./mpi-dyn,n=14,proc=12,work=0.36164
+[useful] prog=./mpi-dyn,n=14,proc=13,work=0.32277
+[useful] prog=./mpi-dyn,n=14,proc=3,work=0.37576
+[useful] prog=./mpi-dyn,n=14,proc=7,work=0.38061
+[useful] prog=./mpi-dyn,n=14,proc=8,work=0.38119
+[useful] prog=./mpi-dyn,n=14,proc=4,work=0.37903
+[useful] prog=./mpi-dyn,n=14,proc=9,work=0.38101
+[useful] prog=./mpi-dyn,n=14,proc=10,work=0.36547
+[useful] prog=./mpi-dyn,n=14,proc=1,work=0.34583
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-dyn,n=14,time=0.56600
+Doing 0 to 800
+[useful] prog=./mpi-static-shuffle,n=2,proc=1,work=2.74514
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-static-shuffle,n=2,time=2.90951
+Doing 400 to 800
+Doing 0 to 400
+[useful] prog=./mpi-static-shuffle,n=3,proc=1,work=2.78793
+[useful] prog=./mpi-static-shuffle,n=3,proc=2,work=3.06059
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-static-shuffle,n=3,time=3.17726
+Doing 267 to 534
+Doing 0 to 267
+Doing 534 to 800
+[useful] prog=./mpi-static-shuffle,n=4,proc=1,work=0.91083
+[useful] prog=./mpi-static-shuffle,n=4,proc=3,work=0.98820
+[useful] prog=./mpi-static-shuffle,n=4,proc=2,work=1.00943
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-static-shuffle,n=4,time=1.14531
+Doing 200 to 400
+Doing 0 to 200
+Doing 400 to 600
+Doing 600 to 800
+[useful] prog=./mpi-static-shuffle,n=5,proc=1,work=0.67673
+[useful] prog=./mpi-static-shuffle,n=5,proc=2,work=0.75205
+[useful] prog=./mpi-static-shuffle,n=5,proc=4,work=1.40925
+[useful] prog=./mpi-static-shuffle,n=5,proc=3,work=1.54166
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-static-shuffle,n=5,time=1.65975
+Doing 160 to 320
+Doing 640 to 800
+Doing 480 to 640
+Doing 320 to 480
+Doing 0 to 160
+[useful] prog=./mpi-static-shuffle,n=6,proc=1,work=0.53398
+[useful] prog=./mpi-static-shuffle,n=6,proc=2,work=0.60659
+[useful] prog=./mpi-static-shuffle,n=6,proc=5,work=1.03561
+[useful] prog=./mpi-static-shuffle,n=6,proc=3,work=1.11852
+[useful] prog=./mpi-static-shuffle,n=6,proc=4,work=1.24499
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-static-shuffle,n=6,time=1.34896
+Doing 134 to 268
+Doing 0 to 134
+Doing 268 to 402
+Doing 402 to 536
+Doing 670 to 800
+Doing 536 to 670
+[useful] prog=./mpi-static-shuffle,n=7,proc=6,work=0.43818
+[useful] prog=./mpi-static-shuffle,n=7,proc=1,work=0.46087
+[useful] prog=./mpi-static-shuffle,n=7,proc=2,work=0.51094
+[useful] prog=./mpi-static-shuffle,n=7,proc=4,work=0.51745
+[useful] prog=./mpi-static-shuffle,n=7,proc=5,work=0.83540
+[useful] prog=./mpi-static-shuffle,n=7,proc=3,work=0.93132
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-static-shuffle,n=7,time=1.06854
+Doing 575 to 690
+Doing 115 to 230
+Doing 345 to 460
+Doing 460 to 575
+Doing 230 to 345
+Doing 690 to 800
+Doing 0 to 115
+[useful] prog=./mpi-static-shuffle,n=8,proc=6,work=0.38838
+[useful] prog=./mpi-static-shuffle,n=8,proc=5,work=0.39656
+[useful] prog=./mpi-static-shuffle,n=8,proc=3,work=0.43680
+[useful] prog=./mpi-static-shuffle,n=8,proc=2,work=0.44090
+[useful] prog=./mpi-static-shuffle,n=8,proc=1,work=0.71544
+[useful] prog=./mpi-static-shuffle,n=8,proc=7,work=0.76686
+[useful] prog=./mpi-static-shuffle,n=8,proc=4,work=0.88756
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-static-shuffle,n=8,time=0.94827
+Doing 0 to 100
+Doing 100 to 200
+Doing 500 to 600
+Doing 400 to 500
+Doing 700 to 800
+Doing 300 to 400
+Doing 200 to 300
+Doing 600 to 700
+[useful] prog=./mpi-static-shuffle,n=9,proc=1,work=0.33989
+[useful] prog=./mpi-static-shuffle,n=9,proc=5,work=0.34161
+[useful] prog=./mpi-static-shuffle,n=9,proc=3,work=0.37999
+[useful] prog=./mpi-static-shuffle,n=9,proc=8,work=0.62979
+[useful] prog=./mpi-static-shuffle,n=9,proc=6,work=0.62962
+[useful] prog=./mpi-static-shuffle,n=9,proc=4,work=0.69967
+[useful] prog=./mpi-static-shuffle,n=9,proc=2,work=0.70673
+[useful] prog=./mpi-static-shuffle,n=9,proc=7,work=0.76959
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-static-shuffle,n=9,time=0.82597
+Doing 89 to 178
+Doing 0 to 89
+Doing 178 to 267
+Doing 445 to 534
+Doing 356 to 445
+Doing 623 to 712
+Doing 534 to 623
+Doing 267 to 356
+Doing 712 to 800
+[useful] prog=./mpi-static-shuffle,n=10,proc=1,work=0.30268
+[useful] prog=./mpi-static-shuffle,n=10,proc=5,work=0.30032
+[useful] prog=./mpi-static-shuffle,n=10,proc=6,work=0.31199
+[useful] prog=./mpi-static-shuffle,n=10,proc=3,work=0.33028
+[useful] prog=./mpi-static-shuffle,n=10,proc=2,work=0.34160
+[useful] prog=./mpi-static-shuffle,n=10,proc=9,work=0.55064
+[useful] prog=./mpi-static-shuffle,n=10,proc=8,work=0.57543
+[useful] prog=./mpi-static-shuffle,n=10,proc=4,work=0.64338
+[useful] prog=./mpi-static-shuffle,n=10,proc=7,work=0.66964
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-static-shuffle,n=10,time=0.72879
+Doing 80 to 160
+Doing 0 to 80
+Doing 560 to 640
+Doing 480 to 560
+Doing 400 to 480
+Doing 320 to 400
+Doing 720 to 800
+Doing 640 to 720
+Doing 240 to 320
+Doing 160 to 240
+[useful] prog=./mpi-static-shuffle,n=11,proc=5,work=0.26621
+[useful] prog=./mpi-static-shuffle,n=11,proc=10,work=0.27314
+[useful] prog=./mpi-static-shuffle,n=11,proc=9,work=0.27287
+[useful] prog=./mpi-static-shuffle,n=11,proc=4,work=0.30623
+[useful] prog=./mpi-static-shuffle,n=11,proc=3,work=0.30929
+[useful] prog=./mpi-static-shuffle,n=11,proc=1,work=0.51004
+[useful] prog=./mpi-static-shuffle,n=11,proc=2,work=0.55337
+[useful] prog=./mpi-static-shuffle,n=11,proc=8,work=0.56196
+[useful] prog=./mpi-static-shuffle,n=11,proc=6,work=0.57009
+[useful] prog=./mpi-static-shuffle,n=11,proc=7,work=0.60963
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-static-shuffle,n=11,time=0.67421
+Doing 0 to 73
+Doing 73 to 146
+Doing 292 to 365
+Doing 730 to 800
+Doing 219 to 292
+Doing 584 to 657
+Doing 657 to 730
+Doing 511 to 584
+Doing 438 to 511
+Doing 365 to 438
+Doing 146 to 219
+[useful] prog=./mpi-static-shuffle,n=12,proc=8,work=0.25018
+[useful] prog=./mpi-static-shuffle,n=12,proc=10,work=0.24486
+[useful] prog=./mpi-static-shuffle,n=12,proc=6,work=0.25195
+[useful] prog=./mpi-static-shuffle,n=12,proc=2,work=0.27506
+[useful] prog=./mpi-static-shuffle,n=12,proc=11,work=0.44631
+[useful] prog=./mpi-static-shuffle,n=12,proc=1,work=0.51066
+[useful] prog=./mpi-static-shuffle,n=12,proc=4,work=0.51423
+[useful] prog=./mpi-static-shuffle,n=12,proc=5,work=0.51935
+[useful] prog=./mpi-static-shuffle,n=12,proc=7,work=0.50857
+[useful] prog=./mpi-static-shuffle,n=12,proc=9,work=0.51416
+[useful] prog=./mpi-static-shuffle,n=12,proc=3,work=0.56504
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-static-shuffle,n=12,time=0.63881
+Doing 67 to 134
+Doing 335 to 402
+Doing 268 to 335
+Doing 670 to 737
+Doing 737 to 800
+Doing 201 to 268
+Doing 134 to 201
+Doing 402 to 469
+Doing 469 to 536
+Doing 536 to 603
+Doing 603 to 670
+Doing 0 to 67
+[useful] prog=./mpi-static-shuffle,n=13,proc=8,work=0.23202
+[useful] prog=./mpi-static-shuffle,n=13,proc=6,work=0.23167
+[useful] prog=./mpi-static-shuffle,n=13,proc=11,work=0.22472
+[useful] prog=./mpi-static-shuffle,n=13,proc=7,work=0.25180
+[useful] prog=./mpi-static-shuffle,n=13,proc=3,work=0.25558
+[useful] prog=./mpi-static-shuffle,n=13,proc=12,work=0.40435
+[useful] prog=./mpi-static-shuffle,n=13,proc=9,work=0.41435
+[useful] prog=./mpi-static-shuffle,n=13,proc=1,work=0.42182
+[useful] prog=./mpi-static-shuffle,n=13,proc=10,work=0.42599
+[useful] prog=./mpi-static-shuffle,n=13,proc=5,work=0.46999
+[useful] prog=./mpi-static-shuffle,n=13,proc=2,work=0.51380
+[useful] prog=./mpi-static-shuffle,n=13,proc=4,work=0.52853
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-static-shuffle,n=13,time=0.59477
+Doing 0 to 62
+Doing 62 to 124
+Doing 310 to 372
+Doing 744 to 800
+Doing 248 to 310
+Doing 620 to 682
+Doing 682 to 744
+Doing 186 to 248
+Doing 124 to 186
+Doing 496 to 558
+Doing 558 to 620
+Doing 372 to 434
+Doing 434 to 496
+[useful] prog=./mpi-static-shuffle,n=14,proc=13,work=0.18563
+[useful] prog=./mpi-static-shuffle,n=14,proc=8,work=0.20999
+[useful] prog=./mpi-static-shuffle,n=14,proc=10,work=0.21341
+[useful] prog=./mpi-static-shuffle,n=14,proc=11,work=0.21490
+[useful] prog=./mpi-static-shuffle,n=14,proc=6,work=0.21790
+[useful] prog=./mpi-static-shuffle,n=14,proc=4,work=0.23541
+[useful] prog=./mpi-static-shuffle,n=14,proc=3,work=0.23523
+[useful] prog=./mpi-static-shuffle,n=14,proc=7,work=0.23521
+[useful] prog=./mpi-static-shuffle,n=14,proc=1,work=0.40105
+[useful] prog=./mpi-static-shuffle,n=14,proc=12,work=0.43135
+[useful] prog=./mpi-static-shuffle,n=14,proc=9,work=0.43223
+[useful] prog=./mpi-static-shuffle,n=14,proc=5,work=0.43464
+[useful] prog=./mpi-static-shuffle,n=14,proc=2,work=0.47198
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-static-shuffle,n=14,time=0.55135
+[useful] prog=./mpi-dyn-shuffle,n=2,proc=1,work=5.56807
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-dyn-shuffle,n=2,time=6.36318
+[useful] prog=./mpi-dyn-shuffle,n=3,proc=2,work=2.08462
+[useful] prog=./mpi-dyn-shuffle,n=3,proc=1,work=1.90775
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-dyn-shuffle,n=3,time=2.64162
+[useful] prog=./mpi-dyn-shuffle,n=4,proc=1,work=1.02472
+[useful] prog=./mpi-dyn-shuffle,n=4,proc=2,work=1.00177
+[useful] prog=./mpi-dyn-shuffle,n=4,proc=3,work=0.96987
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-dyn-shuffle,n=4,time=1.59052
+[useful] prog=./mpi-dyn-shuffle,n=5,proc=2,work=0.86528
+[useful] prog=./mpi-dyn-shuffle,n=5,proc=1,work=0.96316
+[useful] prog=./mpi-dyn-shuffle,n=5,proc=3,work=0.82496
+[useful] prog=./mpi-dyn-shuffle,n=5,proc=4,work=0.83090
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-dyn-shuffle,n=5,time=1.21463
+[useful] prog=./mpi-dyn-shuffle,n=6,proc=1,work=0.94959
+[useful] prog=./mpi-dyn-shuffle,n=6,proc=2,work=0.80389
+[useful] prog=./mpi-dyn-shuffle,n=6,proc=3,work=0.78367
+[useful] prog=./mpi-dyn-shuffle,n=6,proc=4,work=0.91116
+[useful] prog=./mpi-dyn-shuffle,n=6,proc=5,work=0.91122
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-dyn-shuffle,n=6,time=1.19303
+[useful] prog=./mpi-dyn-shuffle,n=7,proc=1,work=0.59637
+[useful] prog=./mpi-dyn-shuffle,n=7,proc=2,work=0.68092
+[useful] prog=./mpi-dyn-shuffle,n=7,proc=3,work=0.62664
+[useful] prog=./mpi-dyn-shuffle,n=7,proc=4,work=0.54012
+[useful] prog=./mpi-dyn-shuffle,n=7,proc=5,work=0.56481
+[useful] prog=./mpi-dyn-shuffle,n=7,proc=6,work=0.55556
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-dyn-shuffle,n=7,time=0.90949
+[useful] prog=./mpi-dyn-shuffle,n=8,proc=2,work=0.48855
+[useful] prog=./mpi-dyn-shuffle,n=8,proc=1,work=0.49710
+[useful] prog=./mpi-dyn-shuffle,n=8,proc=3,work=0.52800
+[useful] prog=./mpi-dyn-shuffle,n=8,proc=4,work=0.48444
+[useful] prog=./mpi-dyn-shuffle,n=8,proc=6,work=0.46873
+[useful] prog=./mpi-dyn-shuffle,n=8,proc=5,work=0.47164
+[useful] prog=./mpi-dyn-shuffle,n=8,proc=7,work=0.53240
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-dyn-shuffle,n=8,time=0.66209
+[useful] prog=./mpi-dyn-shuffle,n=9,proc=1,work=0.48108
+[useful] prog=./mpi-dyn-shuffle,n=9,proc=2,work=0.48895
+[useful] prog=./mpi-dyn-shuffle,n=9,proc=3,work=0.51557
+[useful] prog=./mpi-dyn-shuffle,n=9,proc=4,work=0.53532
+[useful] prog=./mpi-dyn-shuffle,n=9,proc=6,work=0.46399
+[useful] prog=./mpi-dyn-shuffle,n=9,proc=5,work=0.49337
+[useful] prog=./mpi-dyn-shuffle,n=9,proc=8,work=0.45863
+[useful] prog=./mpi-dyn-shuffle,n=9,proc=7,work=0.52183
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-dyn-shuffle,n=9,time=0.65455
+[useful] prog=./mpi-dyn-shuffle,n=10,proc=2,work=0.43852
+[useful] prog=./mpi-dyn-shuffle,n=10,proc=1,work=0.46270
+[useful] prog=./mpi-dyn-shuffle,n=10,proc=3,work=0.43598
+[useful] prog=./mpi-dyn-shuffle,n=10,proc=4,work=0.43218
+[useful] prog=./mpi-dyn-shuffle,n=10,proc=6,work=0.47902
+[useful] prog=./mpi-dyn-shuffle,n=10,proc=5,work=0.42187
+[useful] prog=./mpi-dyn-shuffle,n=10,proc=7,work=0.44834
+[useful] prog=./mpi-dyn-shuffle,n=10,proc=8,work=0.43333
+[useful] prog=./mpi-dyn-shuffle,n=10,proc=9,work=0.46780
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-dyn-shuffle,n=10,time=0.60436
+[useful] prog=./mpi-dyn-shuffle,n=11,proc=2,work=0.34818
+[useful] prog=./mpi-dyn-shuffle,n=11,proc=1,work=0.38937
+[useful] prog=./mpi-dyn-shuffle,n=11,proc=3,work=0.34623
+[useful] prog=./mpi-dyn-shuffle,n=11,proc=4,work=0.33445
+[useful] prog=./mpi-dyn-shuffle,n=11,proc=6,work=0.34063
+[useful] prog=./mpi-dyn-shuffle,n=11,proc=5,work=0.39196
+[useful] prog=./mpi-dyn-shuffle,n=11,proc=7,work=0.32491
+[useful] prog=./mpi-dyn-shuffle,n=11,proc=8,work=0.36047
+[useful] prog=./mpi-dyn-shuffle,n=11,proc=10,work=0.32105
+[useful] prog=./mpi-dyn-shuffle,n=11,proc=9,work=0.31059
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-dyn-shuffle,n=11,time=0.51834
+[useful] prog=./mpi-dyn-shuffle,n=12,proc=1,work=0.30586
+[useful] prog=./mpi-dyn-shuffle,n=12,proc=2,work=0.31096
+[useful] prog=./mpi-dyn-shuffle,n=12,proc=3,work=0.33974
+[useful] prog=./mpi-dyn-shuffle,n=12,proc=4,work=0.30781
+[useful] prog=./mpi-dyn-shuffle,n=12,proc=6,work=0.29762
+[useful] prog=./mpi-dyn-shuffle,n=12,proc=5,work=0.29039
+[useful] prog=./mpi-dyn-shuffle,n=12,proc=11,work=0.27999
+[useful] prog=./mpi-dyn-shuffle,n=12,proc=9,work=0.29181
+[useful] prog=./mpi-dyn-shuffle,n=12,proc=10,work=0.32590
+[useful] prog=./mpi-dyn-shuffle,n=12,proc=7,work=0.27914
+[useful] prog=./mpi-dyn-shuffle,n=12,proc=8,work=0.33176
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-dyn-shuffle,n=12,time=0.48110
+[useful] prog=./mpi-dyn-shuffle,n=13,proc=1,work=0.32252
+[useful] prog=./mpi-dyn-shuffle,n=13,proc=2,work=0.32621
+[useful] prog=./mpi-dyn-shuffle,n=13,proc=3,work=0.35557
+[useful] prog=./mpi-dyn-shuffle,n=13,proc=4,work=0.34704
+[useful] prog=./mpi-dyn-shuffle,n=13,proc=5,work=0.30727
+[useful] prog=./mpi-dyn-shuffle,n=13,proc=6,work=0.37380
+[useful] prog=./mpi-dyn-shuffle,n=13,proc=7,work=0.33993
+[useful] prog=./mpi-dyn-shuffle,n=13,proc=8,work=0.35292
+[useful] prog=./mpi-dyn-shuffle,n=13,proc=11,work=0.29345
+[useful] prog=./mpi-dyn-shuffle,n=13,proc=12,work=0.34021
+[useful] prog=./mpi-dyn-shuffle,n=13,proc=10,work=0.32194
+[useful] prog=./mpi-dyn-shuffle,n=13,proc=9,work=0.34830
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-dyn-shuffle,n=13,time=0.50383
+[useful] prog=./mpi-dyn-shuffle,n=14,proc=1,work=0.26660
+[useful] prog=./mpi-dyn-shuffle,n=14,proc=2,work=0.25256
+[useful] prog=./mpi-dyn-shuffle,n=14,proc=3,work=0.30145
+[useful] prog=./mpi-dyn-shuffle,n=14,proc=5,work=0.24924
+[useful] prog=./mpi-dyn-shuffle,n=14,proc=4,work=0.25612
+[useful] prog=./mpi-dyn-shuffle,n=14,proc=7,work=0.27954
+[useful] prog=./mpi-dyn-shuffle,n=14,proc=10,work=0.25534
+[useful] prog=./mpi-dyn-shuffle,n=14,proc=9,work=0.27826
+[useful] prog=./mpi-dyn-shuffle,n=14,proc=8,work=0.24244
+[useful] prog=./mpi-dyn-shuffle,n=14,proc=6,work=0.24242
+[useful] prog=./mpi-dyn-shuffle,n=14,proc=13,work=0.26216
+[useful] prog=./mpi-dyn-shuffle,n=14,proc=11,work=0.24090
+[useful] prog=./mpi-dyn-shuffle,n=14,proc=12,work=0.24523
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-dyn-shuffle,n=14,time=0.43843
+Doing 0 to 800
+[useful] prog=./mpi-omp-static,n=2,proc=1,work=2.76385
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-omp-static,n=2,time=2.92208
+Doing 400 to 800
+Doing 0 to 400
+[useful] prog=./mpi-omp-static,n=3,proc=1,work=1.37670
+[useful] prog=./mpi-omp-static,n=3,proc=2,work=3.07722
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-omp-static,n=3,time=3.20072
+Doing 267 to 534
+Doing 0 to 267
+Doing 534 to 800
+[useful] prog=./mpi-omp-static,n=4,proc=1,work=0.91148
+[useful] prog=./mpi-omp-static,n=4,proc=3,work=1.83153
+[useful] prog=./mpi-omp-static,n=4,proc=2,work=2.06171
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-omp-static,n=4,time=2.19419
+Doing 0 to 200
+Doing 600 to 800
+Doing 200 to 400
+Doing 400 to 600
+[useful] prog=./mpi-omp-static,n=5,proc=2,work=1.38818
+[useful] prog=./mpi-omp-static,n=5,proc=1,work=1.39729
+[useful] prog=./mpi-omp-static,n=5,proc=3,work=1.53694
+[useful] prog=./mpi-omp-static,n=5,proc=4,work=1.57196
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-omp-static,n=5,time=1.66697
+Doing 160 to 320
+Doing 640 to 800
+Doing 0 to 160
+Doing 320 to 480
+Doing 480 to 640
+[useful] prog=./mpi-omp-static,n=6,proc=1,work=0.54784
+[useful] prog=./mpi-omp-static,n=6,proc=5,work=0.55232
+[useful] prog=./mpi-omp-static,n=6,proc=3,work=0.61108
+[useful] prog=./mpi-omp-static,n=6,proc=4,work=1.12051
+[useful] prog=./mpi-omp-static,n=6,proc=2,work=1.23864
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-omp-static,n=6,time=1.37306
+Doing 0 to 134
+Doing 134 to 268
+Doing 670 to 800
+Doing 536 to 670
+Doing 402 to 536
+Doing 268 to 402
+[useful] prog=./mpi-omp-static,n=7,proc=4,work=0.52132
+[useful] prog=./mpi-omp-static,n=7,proc=6,work=0.82063
+[useful] prog=./mpi-omp-static,n=7,proc=5,work=0.85019
+[useful] prog=./mpi-omp-static,n=7,proc=1,work=0.93105
+[useful] prog=./mpi-omp-static,n=7,proc=2,work=0.94573
+[useful] prog=./mpi-omp-static,n=7,proc=3,work=1.02700
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-omp-static,n=7,time=1.15265
+Doing 345 to 460
+Doing 115 to 230
+Doing 575 to 690
+Doing 0 to 115
+Doing 460 to 575
+Doing 230 to 345
+Doing 690 to 800
+[useful] prog=./mpi-omp-static,n=8,proc=6,work=0.39928
+[useful] prog=./mpi-omp-static,n=8,proc=4,work=0.43952
+[useful] prog=./mpi-omp-static,n=8,proc=1,work=0.71890
+[useful] prog=./mpi-omp-static,n=8,proc=5,work=0.72303
+[useful] prog=./mpi-omp-static,n=8,proc=7,work=0.76653
+[useful] prog=./mpi-omp-static,n=8,proc=3,work=0.81072
+[useful] prog=./mpi-omp-static,n=8,proc=2,work=0.89881
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-omp-static,n=8,time=0.97081
+Doing 100 to 200
+Doing 0 to 100
+Doing 200 to 300
+Doing 300 to 400
+Doing 700 to 800
+Doing 600 to 700
+Doing 500 to 600
+Doing 400 to 500
+[useful] prog=./mpi-omp-static,n=9,proc=1,work=0.34119
+[useful] prog=./mpi-omp-static,n=9,proc=8,work=0.34474
+[useful] prog=./mpi-omp-static,n=9,proc=6,work=0.34449
+[useful] prog=./mpi-omp-static,n=9,proc=5,work=0.34926
+[useful] prog=./mpi-omp-static,n=9,proc=7,work=0.38059
+[useful] prog=./mpi-omp-static,n=9,proc=3,work=0.38661
+[useful] prog=./mpi-omp-static,n=9,proc=4,work=0.77570
+[useful] prog=./mpi-omp-static,n=9,proc=2,work=0.77983
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-omp-static,n=9,time=0.85652
+Doing 89 to 178
+Doing 0 to 89
+Doing 178 to 267
+Doing 445 to 534
+Doing 356 to 445
+Doing 623 to 712
+Doing 267 to 356
+Doing 712 to 800
+Doing 534 to 623
+[useful] prog=./mpi-omp-static,n=10,proc=1,work=0.30550
+[useful] prog=./mpi-omp-static,n=10,proc=5,work=0.30491
+[useful] prog=./mpi-omp-static,n=10,proc=8,work=0.31643
+[useful] prog=./mpi-omp-static,n=10,proc=2,work=0.34252
+[useful] prog=./mpi-omp-static,n=10,proc=4,work=0.35074
+[useful] prog=./mpi-omp-static,n=10,proc=7,work=0.60591
+[useful] prog=./mpi-omp-static,n=10,proc=9,work=0.61567
+[useful] prog=./mpi-omp-static,n=10,proc=3,work=0.67278
+[useful] prog=./mpi-omp-static,n=10,proc=6,work=0.68466
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-omp-static,n=10,time=0.75088
+Doing 80 to 160
+Doing 0 to 80
+Doing 160 to 240
+Doing 240 to 320
+Doing 720 to 800
+Doing 400 to 480
+Doing 320 to 400
+Doing 480 to 560
+Doing 560 to 640
+Doing 640 to 720
+[useful] prog=./mpi-omp-static,n=11,proc=8,work=0.27707
+[useful] prog=./mpi-omp-static,n=11,proc=9,work=0.27599
+[useful] prog=./mpi-omp-static,n=11,proc=6,work=0.28261
+[useful] prog=./mpi-omp-static,n=11,proc=10,work=0.27980
+[useful] prog=./mpi-omp-static,n=11,proc=2,work=0.30090
+[useful] prog=./mpi-omp-static,n=11,proc=7,work=0.30269
+[useful] prog=./mpi-omp-static,n=11,proc=3,work=0.31429
+[useful] prog=./mpi-omp-static,n=11,proc=1,work=0.50685
+[useful] prog=./mpi-omp-static,n=11,proc=5,work=0.55596
+[useful] prog=./mpi-omp-static,n=11,proc=4,work=0.56266
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-omp-static,n=11,time=0.62449
+Doing 0 to 73
+Doing 73 to 146
+Doing 365 to 438
+Doing 292 to 365
+Doing 730 to 800
+Doing 219 to 292
+Doing 146 to 219
+Doing 584 to 657
+Doing 657 to 730
+Doing 511 to 584
+Doing 438 to 511
+[useful] prog=./mpi-omp-static,n=12,proc=8,work=0.24994
+[useful] prog=./mpi-omp-static,n=12,proc=10,work=0.26037
+[useful] prog=./mpi-omp-static,n=12,proc=3,work=0.28138
+[useful] prog=./mpi-omp-static,n=12,proc=9,work=0.46048
+[useful] prog=./mpi-omp-static,n=12,proc=5,work=0.46289
+[useful] prog=./mpi-omp-static,n=12,proc=11,work=0.49473
+[useful] prog=./mpi-omp-static,n=12,proc=1,work=0.51425
+[useful] prog=./mpi-omp-static,n=12,proc=6,work=0.51298
+[useful] prog=./mpi-omp-static,n=12,proc=2,work=0.56353
+[useful] prog=./mpi-omp-static,n=12,proc=4,work=0.56929
+[useful] prog=./mpi-omp-static,n=12,proc=7,work=0.56223
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-omp-static,n=12,time=0.64089
+Doing 67 to 134
+Doing 0 to 67
+Doing 134 to 201
+Doing 335 to 402
+Doing 268 to 335
+Doing 670 to 737
+Doing 737 to 800
+Doing 201 to 268
+Doing 536 to 603
+Doing 469 to 536
+Doing 402 to 469
+Doing 603 to 670
+[useful] prog=./mpi-omp-static,n=13,proc=1,work=0.23276
+[useful] prog=./mpi-omp-static,n=13,proc=10,work=0.23318
+[useful] prog=./mpi-omp-static,n=13,proc=7,work=0.25428
+[useful] prog=./mpi-omp-static,n=13,proc=3,work=0.25959
+[useful] prog=./mpi-omp-static,n=13,proc=4,work=0.26462
+[useful] prog=./mpi-omp-static,n=13,proc=9,work=0.41197
+[useful] prog=./mpi-omp-static,n=13,proc=6,work=0.42150
+[useful] prog=./mpi-omp-static,n=13,proc=5,work=0.42306
+[useful] prog=./mpi-omp-static,n=13,proc=12,work=0.45472
+[useful] prog=./mpi-omp-static,n=13,proc=2,work=0.46550
+[useful] prog=./mpi-omp-static,n=13,proc=8,work=0.47660
+[useful] prog=./mpi-omp-static,n=13,proc=11,work=0.46048
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-omp-static,n=13,time=0.54928
+Doing 62 to 124
+Doing 0 to 62
+Doing 124 to 186
+Doing 186 to 248
+Doing 310 to 372
+Doing 248 to 310
+Doing 620 to 682
+Doing 682 to 744
+Doing 744 to 800
+Doing 372 to 434
+Doing 434 to 496
+Doing 496 to 558
+Doing 558 to 620
+[useful] prog=./mpi-omp-static,n=14,proc=8,work=0.21504
+[useful] prog=./mpi-omp-static,n=14,proc=1,work=0.21790
+[useful] prog=./mpi-omp-static,n=14,proc=11,work=0.21819
+[useful] prog=./mpi-omp-static,n=14,proc=2,work=0.23288
+[useful] prog=./mpi-omp-static,n=14,proc=3,work=0.23719
+[useful] prog=./mpi-omp-static,n=14,proc=13,work=0.35280
+[useful] prog=./mpi-omp-static,n=14,proc=9,work=0.39041
+[useful] prog=./mpi-omp-static,n=14,proc=5,work=0.39394
+[useful] prog=./mpi-omp-static,n=14,proc=4,work=0.43199
+[useful] prog=./mpi-omp-static,n=14,proc=12,work=0.43327
+[useful] prog=./mpi-omp-static,n=14,proc=7,work=0.43279
+[useful] prog=./mpi-omp-static,n=14,proc=10,work=0.43620
+[useful] prog=./mpi-omp-static,n=14,proc=6,work=0.44855
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-omp-static,n=14,time=0.51505
+[useful] prog=./mpi-omp-dyn,n=2,proc=1,work=2.76528
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-omp-dyn,n=2,time=3.68415
+[useful] prog=./mpi-omp-dyn,n=3,proc=2,work=2.04149
+[useful] prog=./mpi-omp-dyn,n=3,proc=1,work=1.83623
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-omp-dyn,n=3,time=2.62419
+[useful] prog=./mpi-omp-dyn,n=4,proc=2,work=1.51630
+[useful] prog=./mpi-omp-dyn,n=4,proc=1,work=1.33252
+[useful] prog=./mpi-omp-dyn,n=4,proc=3,work=1.47296
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-omp-dyn,n=4,time=2.07070
+[useful] prog=./mpi-omp-dyn,n=5,proc=1,work=0.84557
+[useful] prog=./mpi-omp-dyn,n=5,proc=2,work=0.82222
+[useful] prog=./mpi-omp-dyn,n=5,proc=3,work=0.87995
+[useful] prog=./mpi-omp-dyn,n=5,proc=4,work=0.79540
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-omp-dyn,n=5,time=1.26253
+[useful] prog=./mpi-omp-dyn,n=6,proc=1,work=0.92527
+[useful] prog=./mpi-omp-dyn,n=6,proc=2,work=0.79334
+[useful] prog=./mpi-omp-dyn,n=6,proc=3,work=0.77753
+[useful] prog=./mpi-omp-dyn,n=6,proc=4,work=0.86310
+[useful] prog=./mpi-omp-dyn,n=6,proc=5,work=0.87464
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-omp-dyn,n=6,time=1.23986
+[useful] prog=./mpi-omp-dyn,n=7,proc=1,work=0.54775
+[useful] prog=./mpi-omp-dyn,n=7,proc=2,work=0.53044
+[useful] prog=./mpi-omp-dyn,n=7,proc=5,work=0.50445
+[useful] prog=./mpi-omp-dyn,n=7,proc=3,work=0.60184
+[useful] prog=./mpi-omp-dyn,n=7,proc=4,work=0.51452
+[useful] prog=./mpi-omp-dyn,n=7,proc=6,work=0.47953
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-omp-dyn,n=7,time=0.97686
+[useful] prog=./mpi-omp-dyn,n=8,proc=1,work=0.58108
+[useful] prog=./mpi-omp-dyn,n=8,proc=2,work=0.59547
+[useful] prog=./mpi-omp-dyn,n=8,proc=5,work=0.53858
+[useful] prog=./mpi-omp-dyn,n=8,proc=3,work=0.53623
+[useful] prog=./mpi-omp-dyn,n=8,proc=4,work=0.58222
+[useful] prog=./mpi-omp-dyn,n=8,proc=6,work=0.53490
+[useful] prog=./mpi-omp-dyn,n=8,proc=7,work=0.57798
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-omp-dyn,n=8,time=0.77510
+[useful] prog=./mpi-omp-dyn,n=9,proc=2,work=0.50924
+[useful] prog=./mpi-omp-dyn,n=9,proc=1,work=0.55260
+[useful] prog=./mpi-omp-dyn,n=9,proc=6,work=0.48750
+[useful] prog=./mpi-omp-dyn,n=9,proc=5,work=0.53827
+[useful] prog=./mpi-omp-dyn,n=9,proc=3,work=0.54434
+[useful] prog=./mpi-omp-dyn,n=9,proc=4,work=0.54638
+[useful] prog=./mpi-omp-dyn,n=9,proc=8,work=0.53686
+[useful] prog=./mpi-omp-dyn,n=9,proc=7,work=0.49380
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-omp-dyn,n=9,time=0.71831
+[useful] prog=./mpi-omp-dyn,n=10,proc=2,work=0.42159
+[useful] prog=./mpi-omp-dyn,n=10,proc=1,work=0.46891
+[useful] prog=./mpi-omp-dyn,n=10,proc=3,work=0.41811
+[useful] prog=./mpi-omp-dyn,n=10,proc=4,work=0.46001
+[useful] prog=./mpi-omp-dyn,n=10,proc=6,work=0.44950
+[useful] prog=./mpi-omp-dyn,n=10,proc=5,work=0.40827
+[useful] prog=./mpi-omp-dyn,n=10,proc=7,work=0.45606
+[useful] prog=./mpi-omp-dyn,n=10,proc=8,work=0.44849
+[useful] prog=./mpi-omp-dyn,n=10,proc=9,work=0.39916
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-omp-dyn,n=10,time=0.62605
+[useful] prog=./mpi-omp-dyn,n=11,proc=1,work=0.33832
+[useful] prog=./mpi-omp-dyn,n=11,proc=2,work=0.37197
+[useful] prog=./mpi-omp-dyn,n=11,proc=6,work=0.32386
+[useful] prog=./mpi-omp-dyn,n=11,proc=5,work=0.33418
+[useful] prog=./mpi-omp-dyn,n=11,proc=4,work=0.33467
+[useful] prog=./mpi-omp-dyn,n=11,proc=3,work=0.36673
+[useful] prog=./mpi-omp-dyn,n=11,proc=10,work=0.31682
+[useful] prog=./mpi-omp-dyn,n=11,proc=9,work=0.32072
+[useful] prog=./mpi-omp-dyn,n=11,proc=7,work=0.32855
+[useful] prog=./mpi-omp-dyn,n=11,proc=8,work=0.36807
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-omp-dyn,n=11,time=0.53595
+[useful] prog=./mpi-omp-dyn,n=12,proc=2,work=0.34586
+[useful] prog=./mpi-omp-dyn,n=12,proc=1,work=0.38040
+[useful] prog=./mpi-omp-dyn,n=12,proc=3,work=0.37695
+[useful] prog=./mpi-omp-dyn,n=12,proc=4,work=0.36648
+[useful] prog=./mpi-omp-dyn,n=12,proc=6,work=0.36780
+[useful] prog=./mpi-omp-dyn,n=12,proc=5,work=0.33596
+[useful] prog=./mpi-omp-dyn,n=12,proc=11,work=0.36483
+[useful] prog=./mpi-omp-dyn,n=12,proc=7,work=0.36828
+[useful] prog=./mpi-omp-dyn,n=12,proc=8,work=0.33490
+[useful] prog=./mpi-omp-dyn,n=12,proc=10,work=0.32921
+[useful] prog=./mpi-omp-dyn,n=12,proc=9,work=0.33672
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-omp-dyn,n=12,time=0.53577
+[useful] prog=./mpi-omp-dyn,n=13,proc=2,work=0.33174
+[useful] prog=./mpi-omp-dyn,n=13,proc=1,work=0.33848
+[useful] prog=./mpi-omp-dyn,n=13,proc=4,work=0.32146
+[useful] prog=./mpi-omp-dyn,n=13,proc=3,work=0.29413
+[useful] prog=./mpi-omp-dyn,n=13,proc=6,work=0.28747
+[useful] prog=./mpi-omp-dyn,n=13,proc=5,work=0.31773
+[useful] prog=./mpi-omp-dyn,n=13,proc=11,work=0.27402
+[useful] prog=./mpi-omp-dyn,n=13,proc=12,work=0.27545
+[useful] prog=./mpi-omp-dyn,n=13,proc=9,work=0.27977
+[useful] prog=./mpi-omp-dyn,n=13,proc=10,work=0.27487
+[useful] prog=./mpi-omp-dyn,n=13,proc=7,work=0.32804
+[useful] prog=./mpi-omp-dyn,n=13,proc=8,work=0.28237
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-omp-dyn,n=13,time=0.49478
+[useful] prog=./mpi-omp-dyn,n=14,proc=2,work=0.30645
+[useful] prog=./mpi-omp-dyn,n=14,proc=1,work=0.28168
+[useful] prog=./mpi-omp-dyn,n=14,proc=3,work=0.30437
+[useful] prog=./mpi-omp-dyn,n=14,proc=4,work=0.27443
+[useful] prog=./mpi-omp-dyn,n=14,proc=6,work=0.29140
+[useful] prog=./mpi-omp-dyn,n=14,proc=5,work=0.26893
+[useful] prog=./mpi-omp-dyn,n=14,proc=13,work=0.26038
+[useful] prog=./mpi-omp-dyn,n=14,proc=7,work=0.26847
+[useful] prog=./mpi-omp-dyn,n=14,proc=8,work=0.26423
+[useful] prog=./mpi-omp-dyn,n=14,proc=9,work=0.26534
+[useful] prog=./mpi-omp-dyn,n=14,proc=10,work=0.30094
+[useful] prog=./mpi-omp-dyn,n=14,proc=11,work=0.29954
+[useful] prog=./mpi-omp-dyn,n=14,proc=12,work=0.29378
+Hash: ab4EDcrfIZc5E
+[compu] prog=./mpi-omp-dyn,n=14,time=0.49309
+Hash: ab4EDcrfIZc5E
+[sequential] prog=./mandelbrot-nodisp,time=35.63804
