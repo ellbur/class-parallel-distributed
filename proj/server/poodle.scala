@@ -254,7 +254,12 @@ class DatabaseSet(us: Peer, all: List[Peer]) {
         // Make a unique ID for this transaction
         val id = UUID.randomUUID.toString
         val con = peer get ("/query/"+modName+"/"+id)
-        val code = con.getResponseCode
+        val code =
+            try
+                con.getResponseCode
+            catch { case _: IOEXception =>
+                throw Interrupted
+            }
         println("Opened transaction with " + code)
         if (code != 200) throw Interrupted
         con.disconnect

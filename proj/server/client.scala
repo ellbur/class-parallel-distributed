@@ -170,7 +170,6 @@ class MultiClient(level: Int) {
                         println("That's not good it couldn't find it!")
                         StepError
                     case 503 =>
-                        println("Server overloaded")
                         StepError
                     case other =>
                         println("I don't know " + other)
@@ -202,15 +201,6 @@ object client {
             println("Succeeded: %.0f%% (%d/%d)" format (
                 succeeded*100. / (results.length), succeeded, total
             ))
-            
-            val list = (results collect { case mc.Success(t) => t }).sorted.toList
-            val array = list.toArray
-            println()
-            println("%s" format (list take 3))
-            println("%7.3f" format percentile(array,  25))
-            println("%7.3f" format percentile(array,  50))
-            println("%7.3f" format percentile(array,  75))
-            println("%s" format (list takeRight 3 reverse))
         }
     }
 }
