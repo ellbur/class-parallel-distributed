@@ -5,8 +5,7 @@ import scala.xml._
 import java.net._
 
 object Config {
-    val stream = getClass.getClassLoader.getResourceAsStream("properties.xml")
-    val doc = XML load stream
+    val doc = XML loadFile "properties.xml"
     
     val primaryHost = (doc\\"properties"\"@primaryHost").text
     val primaryPort = (doc\\"properties"\"@primaryPort").text.toInt
@@ -17,9 +16,9 @@ object Config {
     }
     val takeProbability = (doc\\"properties"\"@takeProbability").text.toDouble
     
-    val peers = (doc\\"peers"\"peer") map { node =>
-        Peer(node\"@host".text, node\"@port".text.toInt)
-    } toVector
+    val peers = Vector((doc\\"peers"\"peer") map { node =>
+        Peer((node\"@host").text, (node\"@port").text.toInt)
+    }: _*)
     
     val host = InetAddress.getLocalHost.getHostName
 }
