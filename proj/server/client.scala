@@ -25,24 +25,7 @@ class MultiClient(level: Int) {
         
         val done = Ref[Boolean](false)
         
-        Signal handle (new Signal("INT"), new SignalHandler {
-            def handle(sig: Signal) {
-                println("SIGINT, Stopping...")
-                if (atomic(done.get)) System exit 1
-                atomic(done set true)
-            }
-        })
-        
-        {
-            implicit val waiting = TransactionFactory(
-                blockingAllowed=true, trackReads=true, timeout=duration seconds)
-            try
-                atomic(if (!done.get) retry)
-            catch {
-                // Timeout is OK
-                case _: Exception => println("Reached natural end")
-            }
-        }
+        Thread sleep (duration*1000).intValue
         
         println("Stopping")
         clients foreach (_.stop)
@@ -120,11 +103,12 @@ class MultiClient(level: Int) {
         }
         
         private def pause() {
-            val max = (100 - level)*20
+            val max = (100 - level)*200
             val pause =
                 if (max > 0) Random nextInt max
                 else 0
                 
+            println("Pausing " + pause)
             Thread sleep pause
         }
         
