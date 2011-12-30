@@ -394,6 +394,8 @@ trait Debug {
 object server {
     def main(args: Array[String]) {
         val peers = Config.peers
+        println("Peers are " + peers)
+        println("We are " + Config.host)
         val us = peers filter (_.host == Config.host) head
         
         new Server(peers, us)
