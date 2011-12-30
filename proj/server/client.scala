@@ -12,7 +12,7 @@ import akka.dispatch.Dispatchers
 import sun.misc.{Signal, SignalHandler}
 import org.apache.commons.math.stat.StatUtils._
 
-class MultiClient {
+class MultiClient(level: Int) {
     def run(duration: Double): List[Result] = {
         val clients = (1 to 10) map (_ => new Client)
         println("Starting")
@@ -66,7 +66,7 @@ class MultiClient {
     case object ResultError extends Result
     
     class Client {
-        val startURL = "http://ellbur:8000/foochan"
+        val startURL = "http://"+Config.primaryHost+":"+Config.primaryPort+"/upload"
         val maxRedirects = 5
         private val fStop = Ref[Boolean](false)
         private val fDone = Ref[Boolean](false)
@@ -115,7 +115,7 @@ class MultiClient {
         }
         
         private def pause() {
-            // Thread sleep 100
+            Thread sleep ((100.0-level)/100.0)
         }
         
         private def doRequest(url: String) = {
@@ -185,24 +185,27 @@ object client {
     // Main
     
     def main(args: Array[String]) {
-        val mc = new MultiClient
-        val results = mc run 5.0
-        
-        println("Done")
-        
-        val succeeded = (results collect {case _: mc.Success=>()}).length
-        val total = results.length
-        println("Succeeded: %.0f%% (%d/%d)" format (
-            succeeded*100. / (results.length), succeeded, total
-        ))
-        val list = (results collect { case mc.Success(t) => t }).sorted.toList
-        val array = list.toArray
-        println()
-        println("%s" format (list take 3))
-        println("%7.3f" format percentile(array,  25))
-        println("%7.3f" format percentile(array,  50))
-        println("%7.3f" format percentile(array,  75))
-        println("%s" format (list takeRight 3 reverse))
+        List(0, 20, 40, 60, 80, 100) map { level =>
+            println("-- %d --" format level)
+            val mc = new MultiClient(level)
+            val results = mc run 5.0
+            
+            val succeeded = (results collect {case _: mc.Success=>()}).length
+            val total = results.length
+            
+            println("Succeeded: %.0f%% (%d/%d)" format (
+                succeeded*100. / (results.length), succeeded, total
+            ))
+            
+            val list = (results collect { case mc.Success(t) => t }).sorted.toList
+            val array = list.toArray
+            println()
+            println("%s" format (list take 3))
+            println("%7.3f" format percentile(array,  25))
+            println("%7.3f" format percentile(array,  50))
+            println("%7.3f" format percentile(array,  75))
+            println("%s" format (list takeRight 3 reverse))
+        }
     }
 }
 
