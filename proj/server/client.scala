@@ -31,21 +31,8 @@ class MultiClient(level: Int) {
         
         clients foreach (_.stop)
         clients foreach (_.block)
-        getResults
+        clients flatMap (_.results)
     }
-    
-    val results = Ref[List[Result]](Nil)
-    def addResult(r: Result) {
-        try atomic {
-            results alter (r :: _)
-        }
-        catch { case _: Exception =>
-            // Whatever; not a big deal
-        }
-    }
-    def getResults = atomic {
-        results.get
-    }.reverse
     
     sealed trait Result
     case object TooManyRedirects extends Result
@@ -57,6 +44,12 @@ class MultiClient(level: Int) {
         val maxRedirects = 5
         private val fStop = Ref[Boolean](false)
         private val fDone = Ref[Boolean](false)
+        
+        private var results: List[Result] = Nil
+        def addResult(r: Result) {
+            results = r :: results
+        }
+        def getResults = results
         
         def start() {
             // Do this with an actor and an explicit dispatcher just to be
