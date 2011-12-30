@@ -16,7 +16,7 @@ import scala.util.Random
 class MultiClient(level: Int) {
     def run(duration: Double): List[Result] = {
         val apps = Vector("foo1", "foo2", "foo3", "foo4", "foo5")
-        val clients = (1 to 50) map { _ =>
+        val clients = (1 to 5) map { _ =>
             val app = apps(Random nextInt apps.length)
             new Client(app)
         }
