@@ -1,0 +1,19 @@
+<?xml version="1.0" charset="utf-8"?>
+
+<properties
+    primaryHost="frea01"
+    primaryPort="8000"
+    redirectStyle="flat"
+    takeProbability="0.05"
+>
+<peers>
+    <peer host="frea01" port="8000"/>
+    <!--<peer host="frea02" port="8000"/>-->
+    <!--<peer host="frea03" port="8000"/>-->
+    <!--<peer host="frea04" port="8000"/>-->
+    <!--<peer host="frea05" port="8000"/>-->
+    <!--<peer host="frea06" port="8000"/>-->
+    <!--<peer host="frea07" port="8000"/>-->
+</peers>
+</properties>
+
