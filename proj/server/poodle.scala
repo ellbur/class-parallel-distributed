@@ -54,11 +54,16 @@ class CSTransState(peer: Peer, modName: String, id: String) {
     }
     
     def commit() {
-        val con = peer get ("/commit/"+modName+"/"+id)
-        val code = con.getResponseCode
-        println("Committed with " + code)
-        if (code != 200) throw Interrupted
-        con.disconnect
+        try {
+            val con = peer get ("/commit/"+modName+"/"+id)
+            val code = con.getResponseCode
+            println("Committed with " + code)
+            if (code != 200) throw Interrupted
+            con.disconnect
+        }
+        catch { case _: IOException =>
+            throw Interrupted
+        }
     }
 }
 
