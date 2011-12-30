@@ -36,7 +36,7 @@ class MultiClient(level: Int) {
     
     sealed trait Result
     case object TooManyRedirects extends Result
-    case class Success(time: Double) extends Result
+    case class Success(time: Double, numRedirects: Int) extends Result
     case object ResultError extends Result
     
     class Client(app: String) {
@@ -116,10 +116,11 @@ class MultiClient(level: Int) {
             {
                 if (numRedirects > maxRedirects) (url, TooManyRedirects)
                 else doOneStep(url) match {
-                    case OK => (url, Success {
+                    case OK =>
                         val now = System.currentTimeMillis
-                        (now - startTime).doubleValue / 1e3
-                    })
+                        val time = (now - startTime).doubleValue / 1e3
+                        (url, Success(time, numRedirects))
+                        
                     case Redirect(to) => requestIter(to, numRedirects+1)
                     case StepError    => (url, ResultError)
                 }
@@ -183,7 +184,10 @@ object client {
             val attempted = results.length
             
             val times = results collect {
-                case mc.Success(t) => t
+                case mc.Success(t, _) => t
+            } toArray
+            val redirects = results collect {
+                case mc.Success(_, r) => r
             } toArray
             
             println("%d,%s,%.2f,%d,%.1f,%d,%d,%.3f,%.3f,%.3f" format (
@@ -196,7 +200,8 @@ object client {
                 attempted,
                 percentile(times, 25),
                 percentile(times, 50),
-                percentile(times, 75)
+                percentile(times, 75),
+                redirects.sum.doubleValue / redirects.length
             ))
         }
     }
