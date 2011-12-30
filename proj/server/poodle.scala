@@ -257,7 +257,7 @@ class DatabaseSet(us: Peer, all: List[Peer]) {
         val code =
             try
                 con.getResponseCode
-            catch { case _: IOEXception =>
+            catch { case _: IOException =>
                 throw Interrupted
             }
         println("Opened transaction with " + code)
