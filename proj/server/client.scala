@@ -115,7 +115,7 @@ class MultiClient(level: Int) {
         }
         
         private def pause() {
-            Thread sleep ((100.0-level)/100.0)
+            Thread sleep ((100.0-level)/100.0).longValue
         }
         
         private def doRequest(url: String) = {
