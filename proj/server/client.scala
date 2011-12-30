@@ -18,7 +18,7 @@ import System.{err => stderr}
 class MultiClient(level: Int) {
     def run(duration: Double): List[Result] = {
         val apps = Vector("foo1", "foo2", "foo3", "foo4", "foo5")
-        val numClients = 5 + level/2
+        val numClients = 5 + level*2
         val clients = (1 to numClients) map { _ =>
             val app = apps(Random nextInt apps.length)
             new Client(app)
@@ -156,7 +156,8 @@ class MultiClient(level: Int) {
                         stderr.println("That's not good it couldn't find it!")
                         StepError
                     case 503 =>
-                        StepError
+                        // Server overloaded. Treat as redirect.
+                        Redirect(url)
                     case other =>
                         stderr.println("I don't know " + other)
                         StepError
