@@ -13,6 +13,8 @@ import sun.misc.{Signal, SignalHandler}
 import org.apache.commons.math.stat.StatUtils._
 import scala.util.Random
 
+import System.stderr
+
 class MultiClient(level: Int) {
     def run(duration: Double): List[Result] = {
         val apps = Vector("foo1", "foo2", "foo3", "foo4", "foo5")
@@ -180,14 +182,14 @@ object client {
             val succeeded = (results collect {case _: mc.Success=>()}).length
             val attempted = results.length
             
-            val times = results collecet {
+            val times = results collect {
                 case mc.Success(t) => t
             } toArray
             
             println("%d,%d,%d,%.3f,%.3f,%.3f" format (
                 level,
                 succeeded,
-                total,
+                attempted,
                 percentile(times, 25),
                 percentile(times, 50),
                 percentile(times, 75)
