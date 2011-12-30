@@ -31,7 +31,7 @@ class MultiClient(level: Int) {
         
         clients foreach (_.stop)
         clients foreach (_.block)
-        clients flatMap (_.results)
+        clients flatMap (_.getResults)
     }
     
     sealed trait Result
