@@ -171,7 +171,8 @@ object client {
     def main(args: Array[String]) {
         0 to (100, 4) map { level =>
             val mc = new MultiClient(level)
-            val results = mc run 5.0
+            val time = 5.0
+            val results = mc run time
             
             val succeeded = (results collect {case _: mc.Success=>()}).length
             val attempted = results.length
@@ -180,8 +181,9 @@ object client {
                 case mc.Success(t) => t
             } toArray
             
-            println("%d,%d,%d,%.3f,%.3f,%.3f" format (
+            println("%d,%.1f,%d,%d,%.3f,%.3f,%.3f" format (
                 level,
+                time,
                 succeeded,
                 attempted,
                 percentile(times, 25),
