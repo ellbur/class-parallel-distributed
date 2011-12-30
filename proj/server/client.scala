@@ -14,7 +14,11 @@ import org.apache.commons.math.stat.StatUtils._
 
 class MultiClient(level: Int) {
     def run(duration: Double): List[Result] = {
-        val clients = (1 to 10) map (_ => new Client)
+        val apps = Vector("foo1", "foo2", "foo3", "foo4", "foo5")
+        val clients = (1 to 50) map { _ =>
+            val app = apps(Random nextInt apps.length)
+            new Client(app)
+        }
         println("Starting")
         clients foreach (_.start)
         
@@ -65,8 +69,8 @@ class MultiClient(level: Int) {
     case class Success(time: Double) extends Result
     case object ResultError extends Result
     
-    class Client {
-        val startURL = "http://"+Config.primaryHost+":"+Config.primaryPort+"/upload"
+    class Client(app: String) {
+        val startURL = "http://"+Config.primaryHost+":"+Config.primaryPort+"/"+app
         val maxRedirects = 5
         private val fStop = Ref[Boolean](false)
         private val fDone = Ref[Boolean](false)
