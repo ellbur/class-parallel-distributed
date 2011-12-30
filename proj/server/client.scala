@@ -120,8 +120,12 @@ class MultiClient(level: Int) {
         }
         
         private def pause() {
-            val max = 100 - level
-            Thread sleep (Random nextInt max)
+            val max = (100 - level)*4
+            val pause =
+                if (max > 0) Rantdom nextInt max
+                else 0
+                
+            Thread sleep pause
         }
         
         private def doRequest(url: String) = {
@@ -177,7 +181,6 @@ class MultiClient(level: Int) {
                 }
             }
             catch { case e: SocketException =>
-                println("Got socket exception " + e)
                 StepError
             }
         }
