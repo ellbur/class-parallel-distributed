@@ -69,9 +69,14 @@ class MultiClient(level: Int) {
         def block() {
             // http://akka.io/docs/akka/1.2/scala/stm.html#blocking-transactions
             implicit val blocking = TransactionFactory(
-                blockingAllowed=true, trackReads=true, timeout=1000 seconds)
-            atomic {
-                if (!fDone.get) retry
+                blockingAllowed=true, trackReads=true, timeout=10 seconds)
+            try {
+                atomic {
+                    if (!fDone.get) retry
+                }
+            }
+            catch { case _: Exception =>
+                // Timeout. Whatevs
             }
         }
         
@@ -171,7 +176,7 @@ object client {
     def main(args: Array[String]) {
         0 to (100, 4) map { level =>
             val mc = new MultiClient(level)
-            val time = 5.0
+            val time = 10.0
             val results = mc run time
             
             val succeeded = (results collect {case _: mc.Success=>()}).length
@@ -181,7 +186,10 @@ object client {
                 case mc.Success(t) => t
             } toArray
             
-            println("%d,%.1f,%d,%d,%.3f,%.3f,%.3f" format (
+            println("%d,%s,%.2f,%d,%.1f,%d,%d,%.3f,%.3f,%.3f" format (
+                config.peers.length,
+                config.redirectStyle,
+                config.takeProbability,
                 level,
                 time,
                 succeeded,

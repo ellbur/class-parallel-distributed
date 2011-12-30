@@ -35,15 +35,17 @@ object foocommon {
         Thread sleep (Random nextInt 50)
         
         // Some disk IO
-        val file = File createTempFile ("foo", ".txt")
-        val out = new PrintWriter(new FileOutputStream(file))
-        out.println("Stuff")
-        out.flush
-        out.close
-        file.delete()
+        (1 to 20) foreach { n =>
+            val file = File createTempFile ("foo-"+n, ".txt")
+            val out = new PrintWriter(new FileOutputStream(file))
+            out.println(n)
+            out.flush
+            out.close
+            file.delete()
+        }
         
         // Some computation
-        val terms = (1 to 10000) map { i =>
+        val terms = (1 to 50000) map { i =>
             scala.math.pow(i, -(2+num))
         }
         val zeta = terms.sum

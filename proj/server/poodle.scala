@@ -245,7 +245,7 @@ class DatabaseSet(us: Peer, all: List[Peer]) {
     var searching: Boolean = false
     
     // Policy point
-    val takeProbability = 0.05
+    val takeProbability = Config.takeProbability
     
     def runTransaction[A](modName: String, tr: CSTrans[A]) = {
         println("Running transaction")

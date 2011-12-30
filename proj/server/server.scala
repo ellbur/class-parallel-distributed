@@ -222,7 +222,12 @@ trait RequestDispatcher {
     // This is the rule for how load balancing works
     def shouldRedirect(running: Int) = Random.nextDouble < redirectProbability(running)
     def redirectProbability(running: Int) = {
-        running.doubleValue / threadPoolSize
+        val x = running.doubleValue / threadPoolSize
+        Config.redirectStyle match {
+            case "flat"    => x
+            case "convert" => x*x
+            case "concave" => scala.math.sqrt(x)
+        }
     }
     
     def sendRedirect(ex: HttpExchange) {
