@@ -190,7 +190,7 @@ object client {
                 case mc.Success(_, r) => r
             } toArray
             
-            println("%d,%s,%.2f,%d,%.1f,%d,%d,%.3f,%.3f,%.3f" format (
+            println("%d,%s,%.2f,%d,%.1f,%d,%d,%.3f,%.3f,%.3f,%.3f" format (
                 Config.peers.length,
                 Config.redirectStyle,
                 Config.takeProbability,
