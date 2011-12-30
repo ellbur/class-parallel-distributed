@@ -8,7 +8,7 @@ import streams._
 
 object control {
     def main(args: Array[String]) {
-        val url  = "http://"+Config.mainHost+":"+config.mainPort+"/upload"
+        val url  = "http://"+Config.primaryHost+":"+config.primaryPort+"/upload"
         val path = "../foochan/.target/scala-2.9.1/foochan_2.9.1-0.1.jar"
         
         println("Sending to " + url)
@@ -22,7 +22,7 @@ object control {
 
 object control2 {
     def main(args: Array[String]) {
-        val url  = "http://"+Config.mainHost+":"+config.mainPort+"/upload"
+        val url  = "http://"+Config.primaryHost+":"+config.primaryPort+"/upload"
         val path = "../barchan/.target/scala-2.9.1/barchan_2.9.1-0.1.jar"
         
         println("Sending to " + url)
@@ -36,7 +36,7 @@ object control2 {
 
 object control3 {
     def send(name: String) {
-        val url  = "http://"+Config.mainHost+":"+config.mainPort+"/upload"
+        val url  = "http://"+Config.primaryHost+":"+config.primaryPort+"/upload"
         val path = "../foos/"+name+"/.target/scala-2.9.1/module_2.9.1-0.1.jar"
         
         println("Sending "+name+" to " + url)
