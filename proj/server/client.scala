@@ -85,10 +85,10 @@ class MultiClient(level: Int) {
         
         private def run(self: ActorRef) {
             def runIter(url: String) {
+                pause
                 doRequest(url) match {
                     case (nextURL, result) =>
                         addResult(result)
-                        pause()
                         if (atomic(fStop.get)) ()
                         else
                             runIter(nextURL)
@@ -103,7 +103,7 @@ class MultiClient(level: Int) {
         }
         
         private def pause() {
-            val max = (100 - level)*200
+            val max = (100 - level)*20
             val pause =
                 if (max > 0) Random nextInt max
                 else 0
