@@ -191,9 +191,9 @@ object client {
             } toArray
             
             println("%d,%s,%.2f,%d,%.1f,%d,%d,%.3f,%.3f,%.3f" format (
-                config.peers.length,
-                config.redirectStyle,
-                config.takeProbability,
+                Config.peers.length,
+                Config.redirectStyle,
+                Config.takeProbability,
                 level,
                 time,
                 succeeded,
