@@ -11,6 +11,7 @@ import akka.dispatch.Dispatchers
 
 import sun.misc.{Signal, SignalHandler}
 import org.apache.commons.math.stat.StatUtils._
+import scala.util.Random
 
 class MultiClient(level: Int) {
     def run(duration: Double): List[Result] = {
@@ -119,7 +120,8 @@ class MultiClient(level: Int) {
         }
         
         private def pause() {
-            Thread sleep ((100.0-level)/100.0).longValue
+            val max = ((100.0-level)/100.0).intValue
+            Thread sleep (Random nextInt max)
         }
         
         private def doRequest(url: String) = {
