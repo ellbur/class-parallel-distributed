@@ -122,7 +122,7 @@ class MultiClient(level: Int) {
         private def pause() {
             val max = (100 - level)*4
             val pause =
-                if (max > 0) Rantdom nextInt max
+                if (max > 0) Random nextInt max
                 else 0
                 
             Thread sleep pause
