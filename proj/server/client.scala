@@ -13,7 +13,7 @@ import sun.misc.{Signal, SignalHandler}
 import org.apache.commons.math.stat.StatUtils._
 import scala.util.Random
 
-import System.stderr
+import System.err
 
 class MultiClient(level: Int) {
     def run(duration: Double): List[Result] = {
