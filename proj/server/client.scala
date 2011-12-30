@@ -16,22 +16,19 @@ import scala.util.Random
 class MultiClient(level: Int) {
     def run(duration: Double): List[Result] = {
         val apps = Vector("foo1", "foo2", "foo3", "foo4", "foo5")
-        val clients = (1 to 5) map { _ =>
+        val numClients = 5 + level/2
+        val clients = (1 to numClients) map { _ =>
             val app = apps(Random nextInt apps.length)
             new Client(app)
         }
-        println("Starting")
         clients foreach (_.start)
         
         val done = Ref[Boolean](false)
         
         Thread sleep (duration*1000).intValue
         
-        println("Stopping")
         clients foreach (_.stop)
-        println("Blocking")
         clients foreach (_.block)
-        println("Done")
         getResults
     }
     
@@ -108,7 +105,6 @@ class MultiClient(level: Int) {
                 if (max > 0) Random nextInt max
                 else 0
                 
-            println("Pausing " + pause)
             Thread sleep pause
         }
         
@@ -150,17 +146,17 @@ class MultiClient(level: Int) {
                     case 301 =>
                         conn getHeaderField "Location" match {
                             case null =>
-                                println("Redirect without location")
+                                stderr.println("Redirect without location")
                                 StepError
                             case to => Redirect(to)
                         }
                     case 404 =>
-                        println("That's not good it couldn't find it!")
+                        stderr.println("That's not good it couldn't find it!")
                         StepError
                     case 503 =>
                         StepError
                     case other =>
-                        println("I don't know " + other)
+                        stderr.println("I don't know " + other)
                         StepError
                 }
             }
@@ -177,16 +173,24 @@ object client {
     // Main
     
     def main(args: Array[String]) {
-        List(0, 20, 40, 60, 80, 100) map { level =>
-            println("-- %d --" format level)
+        0 to (100, 4) map { level =>
             val mc = new MultiClient(level)
             val results = mc run 5.0
             
             val succeeded = (results collect {case _: mc.Success=>()}).length
-            val total = results.length
+            val attempted = results.length
             
-            println("Succeeded: %.0f%% (%d/%d)" format (
-                succeeded*100. / (results.length), succeeded, total
+            val times = results collecet {
+                case mc.Success(t) => t
+            } toArray
+            
+            println("%d,%d,%d,%.3f,%.3f,%.3f" format (
+                level,
+                succeeded,
+                total,
+                percentile(times, 25),
+                percentile(times, 50),
+                percentile(times, 75)
             ))
         }
     }
