@@ -12,35 +12,35 @@ class Module(env: ModuleEnv) extends misty.Module {
     def handle(ex: HttpExchange) {
         import env._
         
-        Thread sleep (Random nextInt 200)
+        // Some random delay
+        Thread sleep (Random nextInt 50)
         
-        val num = env.runTransaction {
-            select("foo" ~: ___) flatMap {
-                case Nil =>
-                    for {
-                        _ <- insert("foo" =: 1)
-                    }
-                    yield 0l
-                case (_ ~: PInt(x) ~: _)::_ =>
-                    for {
-                        _ <- env.delete("foo" ~: ___)
-                        _ <- env.insert("foo" =: (x+1))
-                    }
-                    yield x
-            }
-        }
-        
-        val resp = "Hi %d\n" format num
-        ex.sendResponseHeaders(200, resp.length)
-        try {
-            val out = ex.getResponseBody
-            out.write(resp.getBytes)
+        // Some disk IO
+        (1 to 20) foreach { n =>
+            val file = File createTempFile ("foo-"+n, ".txt")
+            val out = new PrintWriter(new FileOutputStream(file))
+            out.println(n)
+            out.flush
             out.close
+            file.delete()
         }
-        catch { case _: IOException =>
-            // This is not really a problem, it just means
-            // the client closed the connection before we could write the
-            // data
+        
+        // Some computation
+        val terms = (1 to 50000) map { i =>
+            scala.math.pow(i, -(2+num))
+        }
+        val zeta = terms.sum
+        
+        // Make sure it doesn't optimize that out:
+        if (zeta != 2.117) {
+            val resp = "Hi\n".getBytes
+            ex.sendResponseHeaders(200, resp.length)
+            try {
+                val out = ex.getResponseBody
+                out.write(resp)
+                out.close
+            }
+            catch { case _: IOException => }
         }
     }
 }
