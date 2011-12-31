@@ -1,0 +1,67 @@
+[0m[[0minfo[0m] [0mLoading project definition from /cac/u02/owenh/parellel/proj/server/project[0m
+[0m[[0minfo[0m] [0mSet current project to misty (in build file:/cac/u02/owenh/parellel/proj/server/)[0m
+[0m[[0minfo[0m] [0mUpdating {file:/cac/u02/owenh/parellel/proj/server/}...[0m
+[0m[[0minfo[0m] [0mDone updating.[0m
+[0m[[0minfo[0m] [0mCompiling 6 Scala sources to /cac/u02/owenh/parellel/proj/server/.target/scala-2.9.1/classes...[0m
+[0m[[33mwarn[0m] [0m/cac/u02/owenh/parellel/proj/server/poodle.scala:412: match is not exhaustive![0m
+[0m[[33mwarn[0m] [0mmissing combination          JBool[0m
+[0m[[33mwarn[0m] [0mmissing combination        JDouble[0m
+[0m[[33mwarn[0m] [0mmissing combination         JField[0m
+[0m[[33mwarn[0m] [0mmissing combination           JInt[0m
+[0m[[33mwarn[0m] [0mmissing combination       JNothing[0m
+[0m[[33mwarn[0m] [0mmissing combination          JNull[0m
+[0m[[33mwarn[0m] [0mmissing combination        JObject[0m
+[0m[[33mwarn[0m] [0mmissing combination        JString[0m
+[0m[[33mwarn[0m] [0m        peer json ("/check/"+modName) match {[0m
+[0m[[33mwarn[0m] [0m             ^[0m
+[0m[[33mwarn[0m] [0m/cac/u02/owenh/parellel/proj/server/poodle.scala:426: match is not exhaustive![0m
+[0m[[33mwarn[0m] [0mmissing combination          JBool[0m
+[0m[[33mwarn[0m] [0mmissing combination        JDouble[0m
+[0m[[33mwarn[0m] [0mmissing combination         JField[0m
+[0m[[33mwarn[0m] [0mmissing combination           JInt[0m
+[0m[[33mwarn[0m] [0mmissing combination       JNothing[0m
+[0m[[33mwarn[0m] [0mmissing combination          JNull[0m
+[0m[[33mwarn[0m] [0mmissing combination        JObject[0m
+[0m[[33mwarn[0m] [0mmissing combination        JString[0m
+[0m[[33mwarn[0m] [0m                p json ("/check/"+modName) match {[0m
+[0m[[33mwarn[0m] [0m                  ^[0m
+[0m[[33mwarn[0m] [0m/cac/u02/owenh/parellel/proj/server/poodle.scala:441: match is not exhaustive![0m
+[0m[[33mwarn[0m] [0mmissing combination          JBool[0m
+[0m[[33mwarn[0m] [0mmissing combination        JDouble[0m
+[0m[[33mwarn[0m] [0mmissing combination         JField[0m
+[0m[[33mwarn[0m] [0mmissing combination           JInt[0m
+[0m[[33mwarn[0m] [0mmissing combination       JNothing[0m
+[0m[[33mwarn[0m] [0mmissing combination          JNull[0m
+[0m[[33mwarn[0m] [0mmissing combination        JObject[0m
+[0m[[33mwarn[0m] [0mmissing combination        JString[0m
+[0m[[33mwarn[0m] [0m                    p json ("/has/"+modName) match {[0m
+[0m[[33mwarn[0m] [0m                      ^[0m
+[0m[[33mwarn[0m] [0mthree warnings found[0m
+[0m[[0minfo[0m] [0mRunning misty.client [0m
+5,flat,0.05,0,10.0,48,48,0.182,0.219,0.284,0.021
+5,flat,0.05,4,10.0,99,99,0.216,0.360,0.768,0.061
+5,flat,0.05,8,10.0,143,143,0.189,0.377,1.238,0.070
+5,flat,0.05,12,10.0,168,168,0.195,0.312,1.496,0.089
+5,flat,0.05,16,10.0,217,217,0.270,0.440,1.445,0.124
+5,flat,0.05,20,10.0,279,279,0.279,0.516,0.849,0.154
+5,flat,0.05,24,10.0,272,272,0.292,0.501,1.561,0.132
+5,flat,0.05,28,10.0,220,220,0.416,0.815,3.258,0.236
+5,flat,0.05,32,10.0,317,317,0.541,1.026,1.682,0.252
+5,flat,0.05,36,10.0,301,301,0.547,1.741,2.514,0.272
+5,flat,0.05,40,10.0,327,327,1.096,1.468,2.327,0.352
+5,flat,0.05,44,10.0,334,336,1.036,1.933,2.539,0.359
+5,flat,0.05,48,10.0,343,344,1.388,2.272,3.152,0.385
+5,flat,0.05,52,10.0,317,317,2.287,2.819,3.524,0.533
+5,flat,0.05,56,10.0,341,345,1.744,2.568,3.953,0.557
+5,flat,0.05,60,10.0,252,821,1.433,2.443,4.656,0.484
+5,flat,0.05,64,10.0,169,2732,1.492,2.852,7.363,0.497
+5,flat,0.05,68,10.0,130,2909,1.175,4.345,9.348,0.423
+5,flat,0.05,72,10.0,136,3532,1.655,2.789,5.794,0.493
+5,flat,0.05,76,10.0,157,2984,1.506,2.778,8.275,0.210
+5,flat,0.05,80,10.0,110,5767,2.328,5.131,10.548,0.127
+5,flat,0.05,84,10.0,145,6521,1.027,1.752,8.872,0.145
+5,flat,0.05,88,10.0,80,16731,0.956,1.882,2.811,0.038
+5,flat,0.05,92,10.0,37,14495,0.839,1.768,2.160,0.000
+5,flat,0.05,96,10.0,31,20087,0.792,0.878,0.963,0.000
+5,flat,0.05,100,10.0,2,12897,0.302,0.719,1.136,0.000
+[0m[[32msuccess[0m] [0mTotal time: 629 s, completed Dec 30, 2011 1:37:20 AM[0m
