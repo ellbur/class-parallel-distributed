@@ -12,11 +12,12 @@ import akka.dispatch.Dispatchers
 import sun.misc.{Signal, SignalHandler}
 import org.apache.commons.math.stat.StatUtils._
 import scala.util.Random
+import scala.io.Source
 
 import System.{err => stderr}
 
 class ConsistencyMultiClient {
-    def run(duration: Double): List[(String,Result)] = {
+    def run(duration: Double): Seq[(String,List[Result])] = {
         val apps = Vector("foo1", "foo2", "foo3", "foo4", "foo5")
         val numClients = 12
         val clients = (1 to numClients) map { _ =>
@@ -84,7 +85,7 @@ class ConsistencyMultiClient {
                 pause
                 doRequest(url) match {
                     case (nextURL, result) =>
-                        addResult(result)
+                        result foreach addResult _
                         if (atomic(fStop.get)) ()
                         else
                             runIter(nextURL)
@@ -169,12 +170,12 @@ object consistency {
     def main(args: Array[String]) {
         val mc = new ConsistencyMultiClient
         val time = 600
-        val results = mc run time
+        val allResults = mc run time
         
-        val counts = results groupBy (_._1) map { case (app, results) =>
-            val nums = results map (_.num)
+        val counts = allResults groupBy (_._1) map { case (app, results) =>
+            val nums = results flatMap (_._2 map (_.num))
             val max = nums.max
-            val unique = Set(nums:_*).length
+            val unique = Set(nums:_*).size
             val total = nums.length
             
             val error = max + total - 2*unique
