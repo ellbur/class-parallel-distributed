@@ -169,17 +169,22 @@ object consistency {
     
     def main(args: Array[String]) {
         val mc = new ConsistencyMultiClient
-        val time = 600
+        val time = 60
         val allResults = mc run time
         
         val counts = allResults groupBy (_._1) map { case (app, results) =>
-            val nums = results flatMap (_._2 map (_.num))
+            val numSets = results map (_._2 map (_.num))
+            numSets foreach println _
+            val nums = numSets.flatten
+            println(nums)
+            
             val max = nums.max
             val unique = Set(nums:_*).size
             val total = nums.length
             
             val error = max + total - 2*unique
             
+            println()
             (total, error)
         }
         
