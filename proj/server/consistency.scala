@@ -19,7 +19,7 @@ import System.{err => stderr}
 class ConsistencyMultiClient {
     def run(duration: Double): Seq[(String,List[Result])] = {
         val apps = Vector("foo1", "foo2", "foo3", "foo4", "foo5")
-        val numClients = 4
+        val numClients = 12
         val clients = (1 to numClients) map { n =>
             val app = apps(Random nextInt apps.length)
             new Client(n, app)
