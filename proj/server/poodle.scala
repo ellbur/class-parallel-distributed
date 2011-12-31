@@ -174,7 +174,7 @@ class Database(val modName: String) {
             case Commit(id, ex) =>
                 println("commit")
                 currentTransaction match {
-                    case Some(`id`) =>
+                    case Some(`id`) if (active) =>
                         commit(ex)
                     case _ =>
                         busy(ex)
