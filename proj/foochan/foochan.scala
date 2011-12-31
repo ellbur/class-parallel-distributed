@@ -26,6 +26,7 @@ class Module(env: ModuleEnv) extends misty.Module {
         }
         
         // Some computation
+        val num = Random nextInt 10
         val terms = (1 to 50000) map { i =>
             scala.math.pow(i, -(2+num))
         }
