@@ -314,8 +314,14 @@ class DatabaseSet(us: Peer, all: List[Peer]) {
                 else {
                     println("Propagating")
                     spawn {
-                        val peer = lookupPeer(modName)
-                        send(ex, JArray(JString(peer.host) :: JInt(peer.port) :: Nil))
+                        try {
+                            val peer = lookupPeer(modName)
+                            send(ex, JArray(JString(peer.host) :: JInt(peer.port) :: Nil))
+                        }
+                        catch { case Interrupted =>
+                            ex.sendResponseHeaders(404, -1)
+                            ex.close
+                        }
                     }
                 }
             }
