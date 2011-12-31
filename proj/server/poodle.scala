@@ -174,7 +174,7 @@ class Database(val modName: String) {
             case Commit(id, ex) =>
                 println("commit")
                 currentTransaction match {
-                    case Some(`id`) if (active) =>
+                    case Some(`id`) =>
                         commit(ex)
                     case _ =>
                         busy(ex)
@@ -187,6 +187,7 @@ class Database(val modName: String) {
                 currentTransaction = None
                 
             case GetRows =>
+                currentTransaction = None
                 self.channel ! rows
         }
         
