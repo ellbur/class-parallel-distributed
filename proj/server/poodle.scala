@@ -104,18 +104,20 @@ trait ModuleEnvWithTrans extends ModuleEnv {
     type Trans[A] = CSTrans[A]
     
     def runTransaction[A](trans: Trans[A]) = {
-        def runIter(backoff: Int): A =
-            try {
-                databaseSet.runTransaction(modName, trans)
-            }
-            catch { case Interrupted =>
-                println("Transaction interrupted!! Retrying.")
-                // Backoff
-                Thread sleep (Random nextInt backoff)
-                runIter(backoff * 2)
-            }
+        def runIter(tris: Int, backoff: Int): A =
+            if (tries > 8) throw IllegalStateException("Transaction failed")
+            else
+                try {
+                    databaseSet.runTransaction(modName, trans)
+                }
+                catch { case Interrupted =>
+                    println("Transaction interrupted!! Retrying.")
+                    // Backoff
+                    Thread sleep (Random nextInt backoff)
+                    runIter(tries + 1, backoff * 2)
+                }
             
-        val res = runIter(1)
+        val res = runIter(0, 1)
         println("All done running transaction")
         res
     }
