@@ -475,7 +475,8 @@ class DatabaseSet(us: Peer, all: List[Peer]) {
         }
         current.active = true
         
-        us
+        // But the current transaction has to fail
+        throw Interrupted
     }
 }
 
