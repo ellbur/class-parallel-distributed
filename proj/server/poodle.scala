@@ -104,8 +104,8 @@ trait ModuleEnvWithTrans extends ModuleEnv {
     type Trans[A] = CSTrans[A]
     
     def runTransaction[A](trans: Trans[A]) = {
-        def runIter(tris: Int, backoff: Int): A =
-            if (tries > 8) throw IllegalStateException("Transaction failed")
+        def runIter(tries: Int, backoff: Int): A =
+            if (tries > 8) throw new IllegalStateException("Transaction failed")
             else
                 try {
                     databaseSet.runTransaction(modName, trans)
