@@ -12,6 +12,7 @@ import akka.dispatch.Dispatchers
 import sun.misc.{Signal, SignalHandler}
 import org.apache.commons.math.stat.StatUtils._
 import scala.util.Random
+import scala.io.Source
 
 import System.{err => stderr}
 
@@ -36,7 +37,7 @@ class MultiClient(level: Int) {
     
     sealed trait Result
     case object TooManyRedirects extends Result
-    case class Success(time: Double, numRedirects: Int) extends Result
+    case class Success(time: Double, numRedirects: Int, times: (Int,Int,Int,Int)) extends Result
     case object ResultError extends Result
     
     class Client(app: String) {
@@ -116,10 +117,10 @@ class MultiClient(level: Int) {
             {
                 if (numRedirects > maxRedirects) (url, TooManyRedirects)
                 else doOneStep(url) match {
-                    case OK =>
+                    case OK(times) =>
                         val now = System.currentTimeMillis
                         val time = (now - startTime).doubleValue / 1e3
-                        (url, Success(time, numRedirects))
+                        (url, Success(time, numRedirects, times))
                         
                     case Redirect(to) => requestIter(to, numRedirects+1)
                     case StepError    => (url, ResultError)
@@ -130,7 +131,7 @@ class MultiClient(level: Int) {
         }
         
         sealed trait Step
-        case object OK extends Step
+        case class OK(times: (Int,Int,Int,Int)) extends Step
         case class Redirect(to: String) extends Step
         case object StepError extends Step
         
@@ -143,7 +144,16 @@ class MultiClient(level: Int) {
                 val responseCode = conn.getResponseCode
                 responseCode match {
                     case 200 =>
-                        OK
+                        val text = (Source fromInputStream conn.getInputStream).mkString
+                        val texts = text split "\\," toList
+                        val times = texts map (_.toInt)
+                        
+                        times match {
+                            case List(t1,t2,t3,t4) => OK((t1,t2,t3,t4))
+                            case _ =>
+                                println("Bad times " + text)
+                                StepError
+                        }
                     case 301 =>
                         conn getHeaderField "Location" match {
                             case null =>
@@ -184,13 +194,17 @@ object client {
             val attempted = results.length
             
             val times = results collect {
-                case mc.Success(t, _) => t
+                case mc.Success(t, _, _) => t
             } toArray
             val redirects = results collect {
-                case mc.Success(_, r) => r
+                case mc.Success(_, r, _) => r
             } toArray
             
-            println("%d,%s,%.2f,%d,%.1f,%d,%d,%.3f,%.3f,%.3f,%.3f" format (
+            val parts = results collect {
+                case mc.Success(_, _, p) => p
+            }
+            
+            println("%d,%s,%.2f,%d,%.1f,%d,%d,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f" format (
                 Config.peers.length,
                 Config.redirectStyle,
                 Config.takeProbability,
@@ -201,7 +215,11 @@ object client {
                 percentile(times, 25),
                 percentile(times, 50),
                 percentile(times, 75),
-                redirects.sum.doubleValue / redirects.length
+                redirects.sum.doubleValue / redirects.length,
+                (parts map (_._1)).sum.doubleValue / succeeded,
+                (parts map (_._2)).sum.doubleValue / succeeded,
+                (parts map (_._3)).sum.doubleValue / succeeded,
+                (parts map (_._4)).sum.doubleValue / succeeded
             ))
         }
     }
