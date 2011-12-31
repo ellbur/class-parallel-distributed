@@ -225,8 +225,11 @@ trait RequestDispatcher {
         val x = running.doubleValue / threadPoolSize
         Config.redirectStyle match {
             case "flat"    => x
-            case "convert" => x*x
+            case "convex" => x*x
             case "concave" => scala.math.sqrt(x)
+            case huh =>
+                println("Do not know redirect style " + huh)
+                sys.error("Nope")
         }
     }
     
