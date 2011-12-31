@@ -261,7 +261,15 @@ trait ContainerManager {
     self: Storage with Debug =>
         
     case class Container(jarFile: File, name: String, version: String, module: Module) {
-        def handle(ex: HttpExchange) { module.handle(ex) }
+        def handle(ex: HttpExchange) {
+            try {
+                module.handle(ex)
+            }
+            catch { case _: Exception =>
+                ex.sendResponseHeaders(400, -1)
+                ex.close
+            }
+        }
         def dispose() { jarFile.delete }
     }
     

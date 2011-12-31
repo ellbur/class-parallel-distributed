@@ -179,7 +179,7 @@ object consistency {
             val nums = numSets.flatten
             println(nums)
             
-            val max = nums.max
+            val max = nums.max + 1
             val unique = Set(nums:_*).size
             val total = nums.length
             
