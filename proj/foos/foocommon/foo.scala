@@ -15,7 +15,7 @@ object foocommon {
         import env._
         
         // Database request
-        val num = env.runTransaction {
+        val (t1, num) = time(env.runTransaction {
             select("foo" ~: ___) flatMap {
                 case Nil =>
                     for {
@@ -29,30 +29,36 @@ object foocommon {
                     }
                     yield x
             }
-        }
+        })
         
         // Some random delay
-        Thread sleep (Random nextInt 50)
+        val (t2, _) = time {
+            Thread sleep (Random nextInt 50)
+        }
         
         // Some disk IO
-        (1 to 20) foreach { n =>
-            val file = File createTempFile ("foo-"+n, ".txt")
-            val out = new PrintWriter(new FileOutputStream(file))
-            out.println(n)
-            out.flush
-            out.close
-            file.delete()
+        val (t3, _) = time {
+            (1 to 20) foreach { n =>
+                val file = File createTempFile ("foo-"+n, ".txt")
+                val out = new PrintWriter(new FileOutputStream(file))
+                out.println(n)
+                out.flush
+                out.close
+                file.delete()
+            }
         }
         
         // Some computation
-        val terms = (1 to 50000) map { i =>
-            scala.math.pow(i, -(2+num))
+        val (t4, zeta) = time {
+            val terms = (1 to 50000) map { i =>
+                scala.math.pow(i, -(2+num))
+            }
+            terms.sum
         }
-        val zeta = terms.sum
         
         // Make sure it doesn't optimize that out:
         if (zeta != 2.117) {
-            val resp = num.toString.getBytes
+            val resp = ("%d,%d,%d,%d" format (t1,t2,t3,t4)).getBytes
             ex.sendResponseHeaders(200, resp.length)
             try {
                 val out = ex.getResponseBody
@@ -61,6 +67,13 @@ object foocommon {
             }
             catch { case _: IOException => }
         }
+    }
+    
+    def time[A](a: => A): (Long, A) = {
+        val start = System.currentTimeMillis
+        val x = a
+        val end = System.currentTimeMillis
+        (start-end, x)
     }
 }
 

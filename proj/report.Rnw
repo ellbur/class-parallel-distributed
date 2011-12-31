@@ -1,0 +1,55 @@
+
+\documentclass[12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[fleqn]{amsmath}
+\usepackage[hmargin=0.2in,vmargin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{alltt}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{subfig}
+\usepackage{float}
+\usepackage{url}
+
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0.1in}
+
+\newcommand{\cc}[1]{{\ttfamily{#1}}}
+
+\begin{document}
+
+Owen Healy
+
+Final Project
+
+<<echo=F>>=
+library(plyr)
+library(ggplot2)
+@
+
+\section{}
+
+\section{What happens if we don't have to share state?}
+
+The numbers above show that the server is limited in its scalability but it's
+not clear from looking at the numbers why it is limited. However it is
+reasonable to suspect that a large part of the problem is the need to share
+state among the servers.
+
+If 10 requests come in, they may initially be spread out among 5 servers, but
+because they operate on state they may come down to just 2 bottlenecks:
+
+\includegraphics{state1}
+
+So that the tasks are serialized much more than expected:
+
+\includegraphics{state2}
+
+So, if we run an app on the server that does all the same calculation, disk IO,
+and random pausing as the first app, but just omits the DB transaction, we
+might see quite a difference in scalability:
+
+
+
+\end{document}
+
