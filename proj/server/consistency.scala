@@ -19,7 +19,7 @@ import System.{err => stderr}
 class ConsistencyMultiClient {
     def run(duration: Double): Seq[(String,List[Result])] = {
         val apps = Vector("foo1", "foo2", "foo3", "foo4", "foo5")
-        val numClients = 12
+        val numClients = 1
         val clients = (1 to numClients) map { _ =>
             val app = apps(Random nextInt apps.length)
             new Client(app)
@@ -136,6 +136,7 @@ class ConsistencyMultiClient {
                 responseCode match {
                     case 200 =>
                         val num = (Source fromInputStream conn.getInputStream).mkString.toInt
+                        println("%s: %d" format (app, num))
                         OK(num)
                     case 301 =>
                         conn getHeaderField "Location" match {
